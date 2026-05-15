@@ -1,4 +1,3 @@
-
 /*
   Leads
     // Create
@@ -131,19 +130,18 @@ export class LeadsPage extends BasePage {
     await this.saveLead();
   }
 
-
   async expectLeadCreated(lead: LeadData): Promise<void> {
     const fullName = `${lead.salutation} ${lead.firstName} ${lead.lastName}`;
 
-    const toast = this.page.locator('.toastMessage');
+    const toast = this.page.locator(".toastMessage");
 
     await expect(toast).toBeVisible();
     await expect(toast).toHaveText(
-      new RegExp(`Lead .*${fullName}.* was created`)
+      new RegExp(`Lead .*${fullName}.* was created`),
     );
 
     await expect(
-      this.page.getByRole('heading', { name: fullName }),
+      this.page.getByRole("heading", { name: fullName }),
     ).toBeVisible();
   }
 
@@ -184,21 +182,21 @@ export class LeadsPage extends BasePage {
   }
 
   /**
- * Validates Salesforce field-level validation errors displayed
- * inside the "We hit a snag." error dialog.
- *
- * This method verifies:
- * - Error dialog visibility
- * - Error dialog title
- * - Required field validation messages
- *
- * Example:
- *
- * await leadsPage.expectValidationErrors([
- *   "Name",
- *   "Company",
- * ]);
- */
+   * Validates Salesforce field-level validation errors displayed
+   * inside the "We hit a snag." error dialog.
+   *
+   * This method verifies:
+   * - Error dialog visibility
+   * - Error dialog title
+   * - Required field validation messages
+   *
+   * Example:
+   *
+   * await leadsPage.expectValidationErrors([
+   *   "Name",
+   *   "Company",
+   * ]);
+   */
   async expectValidationErrors(fields: string[]): Promise<void> {
     const errorDialogHeading = this.page.getByRole("heading", {
       name: "We hit a snag.",
@@ -211,9 +209,7 @@ export class LeadsPage extends BasePage {
     ).toBeVisible();
 
     for (const field of fields) {
-      await expect(
-        this.page.getByRole("link", { name: field }),
-      ).toBeVisible();
+      await expect(this.page.getByRole("link", { name: field })).toBeVisible();
     }
   }
 
@@ -223,4 +219,29 @@ export class LeadsPage extends BasePage {
     await toast.waitFor({ state: "hidden" });
   }
 
+  async searchLead(searchText: string): Promise<void> {
+    const searchInput = this.page.getByRole("searchbox", {
+      name: /Search this list/i,
+    });
+
+    await this.waitUntilClickable(searchInput);
+
+    await searchInput.click();
+
+    await searchInput.fill(searchText);
+
+    await this.page.keyboard.press("Enter");
+
+    await expect(
+      this.page.getByRole("link", { name: searchText }),
+    ).toBeVisible();
+  }
+
+  async expectEmptyState(): Promise<void> {
+    const emptyStateMessage = this.page.getByText("No items to display.", {
+      exact: true,
+    });
+
+    await expect(emptyStateMessage).toBeVisible();
+  }
 }
