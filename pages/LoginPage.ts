@@ -1,12 +1,9 @@
 import { expect, Page } from '@playwright/test';
+import { BasePage } from './BasePage';
 
-export class LoginPage {
-  constructor(private page: Page) {}
-
-  async navigate(): Promise<void> {
-    console.log('Navigating to Salesforce URL:', process.env.BASE_URL);
-    console.log('Current page URL:', this.page.url());
-    await this.page.goto('');
+export class LoginPage extends BasePage {
+  constructor(page: Page) {
+    super(page);
   }
 
   async login(username: string, password: string): Promise<void> {
