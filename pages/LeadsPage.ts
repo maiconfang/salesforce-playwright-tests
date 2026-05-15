@@ -224,17 +224,29 @@ export class LeadsPage extends BasePage {
       name: /Search this list/i,
     });
 
-    await this.waitUntilClickable(searchInput);
+    const leadLink = this.page.getByRole("link", {
+      name: searchText,
+      exact: true,
+    });
+
+    await expect(searchInput).toBeVisible();
+    await expect(searchInput).toBeEditable();
 
     await searchInput.click();
 
+    await searchInput.press("Control+A");
+    await searchInput.press("Backspace");
+
     await searchInput.fill(searchText);
 
-    await this.page.keyboard.press("Enter");
+    await Promise.all([
+      this.page.waitForLoadState("networkidle"),
+      searchInput.press("Enter"),
+    ]);
 
-    await expect(
-      this.page.getByRole("link", { name: searchText }),
-    ).toBeVisible();
+    await expect(leadLink).toBeVisible({
+      timeout: 15000,
+    });
   }
 
   async expectEmptyState(): Promise<void> {
