@@ -132,6 +132,7 @@ npx playwright test tests/leads/ --headed // Run in visual mode
 npx playwright test tests/leads/ // Run all test inside the folder "leads"
 npx playwright test -g "should cancel lead creation without saving data" --headed // only this test in browser
 npx playwright test -g "should cancel lead creation without saving data" --debug --headed
+npx playwright test tests/components/search/search.component.spec.ts
 
 
 ---

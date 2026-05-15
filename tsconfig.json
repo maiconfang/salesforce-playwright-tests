@@ -2,6 +2,18 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "commonjs",
-    "types": ["node"]
+    "types": ["node"],
+
+    "baseUrl": ".",
+
+    "paths": {
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@tests/*": ["tests/*"],
+      "@data/*": ["test-data/*"],
+      "@models/*": ["src/models/*"]
+    },
+
+    "ignoreDeprecations": "6.0"
   }
 }

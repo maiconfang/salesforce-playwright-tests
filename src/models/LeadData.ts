@@ -1,0 +1,22 @@
+export type LeadData = {
+  salutation: string;
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  phone: string;
+  title: string;
+  rating: string;
+  addressSearch: string;
+  addressOption: string;
+  city: string;
+  stateProvince: string;
+  country: string;
+  street: string;
+  postalCode: string;
+  numberOfEmployees: string;
+  leadSource: string;
+  annualRevenue: string;
+  industry: string;
+  description: string;
+};

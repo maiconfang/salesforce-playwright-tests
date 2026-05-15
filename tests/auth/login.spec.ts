@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../../pages/LoginPage';
 import { requiredEnv } from '../../utils/env';
+import { LoginPage } from '@pages/LoginPage';
 
 test('should login successfully into Salesforce', async ({ page }) => {
   const loginPage = new LoginPage(page);

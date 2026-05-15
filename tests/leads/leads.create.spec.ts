@@ -1,6 +1,14 @@
 import { test } from '@playwright/test';
-import { LeadsPage } from '../../pages/LeadsPage';
-import { leadTestData } from '../../test-data/leads';
+import { LeadsPage } from '@pages/LeadsPage';
+import { createLeadCancelTestData, leadTestData } from '@data/leads';
+
+// Legacy relative imports kept as reference after migrating to TypeScript path aliases.
+// Replaced with cleaner and more maintainable aliases such as:
+// @pages/LeadsPage
+// @data/leads
+
+// import { LeadsPage } from '../../pages/LeadsPage';
+// import { leadTestData } from '../../test-data/leads';
 
 test.describe('Leads Create', () => {
 
@@ -40,6 +48,8 @@ test.describe('Leads Create', () => {
   test('should cancel lead creation without saving data', async ({ page }) => {
     const leadsPage = new LeadsPage(page);
 
+    const leadCancelTestData = createLeadCancelTestData();
+
     await leadsPage.navigate();
 
     await leadsPage.openLeads();
@@ -48,13 +58,15 @@ test.describe('Leads Create', () => {
 
     await leadsPage.waitToastToDisappear();
 
-    await leadsPage.fillLeadForm(leadTestData);
+    await leadsPage.fillLeadForm(leadCancelTestData);
 
     await leadsPage.cancelAndCloseModal();
 
-    await leadsPage.searchLead(leadTestData.lastName);
+    await leadsPage.searchGlobalComponent.searchByText(
+      leadCancelTestData.lastName,
+    );
 
-    await leadsPage.expectEmptyState();
+    await leadsPage.expectGlobalSearchNoResults(leadCancelTestData.lastName);
   });
 
 });

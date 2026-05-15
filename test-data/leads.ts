@@ -1,4 +1,4 @@
-import { LeadData } from '../pages/LeadsPage';
+import { LeadData } from "src/models/LeadData";
 
 export const leadTestData: LeadData = {
   salutation: 'Mr.',
@@ -22,3 +22,30 @@ export const leadTestData: LeadData = {
   industry: 'Other',
   description: 'Description hi',
 };
+
+export function createLeadCancelTestData(): LeadData {
+  const uniqueId = Date.now();
+
+  return {
+    salutation: 'Mr.',
+    firstName: 'Cancel',
+    lastName: `Lead-${uniqueId}`,
+    company: 'Cancel QA',
+    email: `cancel.${uniqueId}@gmail.com`,
+    phone: '5551234',
+    title: 'QA Cancel Test',
+    rating: 'Warm',
+    addressSearch: 'Moncton',
+    addressOption: 'Moncton NB, Canada',
+    city: 'Moncton',
+    stateProvince: 'NB',
+    country: 'Canada',
+    street: '100 Cancel Street',
+    postalCode: 'E1A 1A1',
+    numberOfEmployees: '10',
+    leadSource: 'Web',
+    annualRevenue: '1000',
+    industry: 'Technology',
+    description: 'Lead used for cancel validation test',
+  };
+}
