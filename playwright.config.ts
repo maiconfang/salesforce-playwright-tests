@@ -4,12 +4,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
+
   testDir: './tests',
 
   fullyParallel: false,
 
   use: {
-    baseURL: process.env.BASE_URL,
+
+    baseURL:
+      process.env.BASE_URL,
 
     headless: true,
 
@@ -26,6 +29,7 @@ export default defineConfig({
   },
 
   projects: [
+
     {
       name: 'setup',
 
@@ -42,7 +46,34 @@ export default defineConfig({
       dependencies: ['setup'],
 
       use: {
-        storageState: 'playwright/.auth/user.json',
+        storageState:
+          'playwright/.auth/user.json',
+      },
+    },
+
+    /**
+     * Dedicated API project.
+     *
+     * Avoids:
+     * - Browser startup
+     * - UI authentication
+     * - storageState dependencies
+     *
+     * Recommended for:
+     * - REST API tests
+     * - Salesforce integrations
+     * - Service validation
+     * - Contract testing
+     */
+    {
+      name: 'api',
+
+      use: {
+
+        baseURL:
+          process.env.SF_INSTANCE_URL,
+
+        headless: true,
       },
     },
   ],

@@ -1,6 +1,7 @@
+import { requiredEnv } from "@/utils/env";
 import { test, expect, request } from "@playwright/test";
 
-import { requiredEnv } from "@/utils/env";
+
 
 test(
   "should authenticate with Salesforce API",

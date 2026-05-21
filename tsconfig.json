@@ -6,13 +6,26 @@
 
     "baseUrl": ".",
 
-    "paths": {
-      "@pages/*": ["src/pages/*"],
-      "@components/*": ["src/components/*"],
-      "@tests/*": ["tests/*"],
-      "@data/*": ["test-data/*"],
-      "@models/*": ["src/models/*"]
-    },
+  "paths": {
+    "@pages/*": ["src/pages/*"],
+    "@components/*": ["src/components/*"],
+    "@tests/*": ["tests/*"],
+    "@data/*": ["test-data/*"],
+    "@models/*": ["src/models/*"],
+
+    "@api/*": ["src/api/*"],
+
+    "@clients/*": ["src/api/clients/*"],
+    "@services/*": ["src/api/services/*"],
+    "@builders/*": ["src/api/builders/*"],
+    "@validators/*": ["src/api/validators/*"],
+    "@contracts/*": ["src/api/contracts/*"],
+    "@fixtures/*": ["src/api/fixtures/*"],
+    "@auth/*": ["src/api/auth/*"],
+    "@utils/*": ["src/api/utils/*"],
+
+    "@/*": ["src/*"]
+  },
 
     "ignoreDeprecations": "6.0"
   }
