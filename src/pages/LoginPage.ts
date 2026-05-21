@@ -19,4 +19,10 @@ export class LoginPage extends BasePage {
   async expectSuccessfulLogin(): Promise<void> {
     await expect(this.page).not.toHaveURL(/login/);
   }
+
+  async expectInvalidCredentialsError(): Promise<void> {
+    await expect(this.page.locator('#error')).toHaveText(
+      "Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.",
+    );
+  }
 }

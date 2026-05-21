@@ -1,34 +1,29 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
+
+import { SynchronizationComponent } from "@components/synchronization/SynchronizationComponent";
+import { UiActionsComponent } from "@components/interactions/UiActionsComponent";
 
 export class BasePage {
-  constructor(protected page: Page) {}
+  protected readonly page: Page;
 
-  async navigate(): Promise<void> {
-    await this.page.goto("/");
+  protected readonly synchronizationComponent: SynchronizationComponent;
+
+  protected readonly uiActionsComponent: UiActionsComponent;
+
+  constructor(page: Page) {
+    this.page = page;
+
+    this.synchronizationComponent = new SynchronizationComponent(page);
+
+    this.uiActionsComponent = new UiActionsComponent(page);
   }
 
-  async waitToastToDisappear(): Promise<void> {
-    await this.page.locator(".toastMessage").waitFor({ state: "hidden" });
-  }
+  /**
+   * Navigates to the application base URL.
+   */
+  async open(path: string = ""): Promise<void> {
+    const baseUrl = process.env.BASE_URL;
 
-  async waitUntilClickable(locator: Locator): Promise<void> {
-    await expect(async () => {
-      await locator.click({ trial: true });
-    }).toPass();
-  }
-
-  async cancelAndCloseModal(): Promise<void> {
-    const cancelButton = this.page.getByRole("button", {
-      name: "Cancel",
-      exact: true,
-    });
-
-    await expect(cancelButton).toBeVisible();
-
-    await this.waitUntilClickable(cancelButton);
-
-    await expect(cancelButton).toBeEnabled();
-
-    await cancelButton.click();
+    await this.page.goto(`${baseUrl}${path}`);
   }
 }

@@ -134,6 +134,8 @@ npx playwright test -g "should cancel lead creation without saving data" --heade
 npx playwright test -g "should cancel lead creation without saving data" --debug --headed
 npx playwright test tests/components/search/search.component.spec.ts
 
+npx playwright test --headed // seeing with browser
+
 
 ---
 

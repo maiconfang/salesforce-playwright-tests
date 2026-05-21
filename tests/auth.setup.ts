@@ -5,7 +5,7 @@ import { LoginPage } from '@pages/LoginPage';
 setup('authenticate', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
-  await loginPage.navigate();
+  await loginPage.open();
 
   await loginPage.login(
     requiredEnv('SALESFORCE_USERNAME'),

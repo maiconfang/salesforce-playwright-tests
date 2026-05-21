@@ -1,4 +1,7 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
+
+import { SynchronizationComponent } from "@components/synchronization/SynchronizationComponent";
+import { UiActionsComponent } from "@components/interactions/UiActionsComponent";
 
 /**
  * BaseComponent
@@ -7,29 +10,27 @@ import { expect, Locator, Page } from "@playwright/test";
  *
  * Benefits:
  * - Centralized synchronization helpers
+ * - Centralized UI interactions
  * - Reduced duplicated code
  * - Better maintainability
  * - More scalable architecture
  */
 export class BaseComponent {
+
+  protected readonly synchronizationComponent:
+    SynchronizationComponent;
+
+  protected readonly uiActionsComponent:
+    UiActionsComponent;
+
   constructor(
     protected readonly page: Page,
-  ) {}
+  ) {
 
-  /**
-   * Wait until locator becomes truly clickable.
-   *
-   * Useful for:
-   * - Salesforce
-   * - SPA applications
-   * - Async rendering
-   * - Animation delays
-   */
-  protected async waitUntilClickable(
-    locator: Locator,
-  ): Promise<void> {
-    await expect(async () => {
-      await locator.click({ trial: true });
-    }).toPass();
+    this.synchronizationComponent =
+      new SynchronizationComponent(page);
+
+    this.uiActionsComponent =
+      new UiActionsComponent(page);
   }
 }

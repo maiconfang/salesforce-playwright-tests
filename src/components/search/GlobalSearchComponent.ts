@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { BaseComponent } from "./BaseComponent";
+import { BaseComponent } from "@components/BaseComponent";
 
 /**
  * Reusable global search component for Salesforce.
@@ -35,16 +35,22 @@ export class GlobalSearchComponent extends BaseComponent {
   /**
    * Searches for a record using Salesforce list search.
    */
-  async searchByText(searchText: string): Promise<void> {
+  async search(searchText: string): Promise<void> {
     await this.openSearch();
 
     await this.waitUntilSearchReady();
 
     await this.clearSearch();
 
-    await this.searchInput.fill(searchText);
+    await this.uiActionsComponent.fill(
+      this.searchInput,
+      searchText,
+    );
 
-    await this.searchInput.press("Enter");
+    await this.uiActionsComponent.press(
+      this.searchInput,
+      "Enter",
+    );
   }
 
   /**
@@ -72,7 +78,7 @@ export class GlobalSearchComponent extends BaseComponent {
     searchText: string,
   ): Promise<void> {
 
-    await this.searchByText(searchText);
+    await this.search(searchText);
 
     await this.expectSearchResultVisible(
       searchText,
@@ -84,11 +90,9 @@ export class GlobalSearchComponent extends BaseComponent {
    */
   private async openSearch(): Promise<void> {
 
-    await this.waitUntilClickable(
+    await this.uiActionsComponent.click(
       this.openSearchButton,
     );
-
-    await this.openSearchButton.click();
   }
 
   /**
@@ -105,6 +109,8 @@ export class GlobalSearchComponent extends BaseComponent {
    */
   private async clearSearch(): Promise<void> {
 
-    await this.searchInput.clear();
+    await this.uiActionsComponent.clear(
+      this.searchInput,
+    );
   }
 }

@@ -15,7 +15,7 @@ test.describe('Leads Create', () => {
   test('should create a new lead', async ({ page }) => {
     const leadsPage = new LeadsPage(page);
 
-    await leadsPage.navigate();
+    await leadsPage.open();
 
     await leadsPage.openLeads();
 
@@ -29,13 +29,13 @@ test.describe('Leads Create', () => {
   }) => {
     const leadsPage = new LeadsPage(page);
 
-    await leadsPage.navigate();
+    // await leadsPage.open();
 
     await leadsPage.openLeads();
 
     await leadsPage.openNewLeadForm();
 
-    await leadsPage.waitToastToDisappear();
+    // await leadsPage.waitToastToDisappear();
 
     await leadsPage.saveLead();
 
@@ -50,19 +50,20 @@ test.describe('Leads Create', () => {
 
     const leadCancelTestData = createLeadCancelTestData();
 
-    await leadsPage.navigate();
+    // await leadsPage.open();
 
     await leadsPage.openLeads();
 
     await leadsPage.openNewLeadForm();
 
-    await leadsPage.waitToastToDisappear();
+    // await leadsPage.waitToastToDisappear();
 
-    await leadsPage.fillLeadForm(leadCancelTestData);
+    await leadsPage.fill(leadCancelTestData);
 
-    await leadsPage.cancelAndCloseModal();
+    await leadsPage.cancelLeadCreation();
 
-    await leadsPage.searchGlobalComponent.searchByText(
+
+    await leadsPage.searchLead(
       leadCancelTestData.lastName,
     );
 
