@@ -24,6 +24,8 @@ export class BasePage {
   async open(path: string = ""): Promise<void> {
     const baseUrl = process.env.BASE_URL;
 
+     console.log("BASE_URL Test Maicon Fang:", process.env.BASE_URL);
+
     await this.page.goto(`${baseUrl}${path}`);
   }
 }
