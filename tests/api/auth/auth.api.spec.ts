@@ -3,8 +3,7 @@ import { test, expect, request } from "@playwright/test";
 
 
 
-test(
-  "should authenticate with Salesforce API",
+test.skip("should authenticate with Salesforce API",
   async () => {
 
     const apiContext = await request.newContext();

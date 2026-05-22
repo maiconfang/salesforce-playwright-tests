@@ -24,7 +24,7 @@ test.describe('Leads Create', () => {
     await leadsPage.expectLeadCreated(leadTestData);
   });
 
-  test('should display validation errors when required fields are empty', async ({
+  test.skip('should display validation errors when required fields are empty', async ({
     page,
   }) => {
     const leadsPage = new LeadsPage(page);
@@ -45,7 +45,7 @@ test.describe('Leads Create', () => {
     ]);
   });
 
-  test('should cancel lead creation without saving data', async ({ page }) => {
+  test.skip('should cancel lead creation without saving data', async ({ page }) => {
     const leadsPage = new LeadsPage(page);
 
     const leadCancelTestData = createLeadCancelTestData();

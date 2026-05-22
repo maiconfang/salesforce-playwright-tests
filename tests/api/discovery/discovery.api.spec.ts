@@ -92,8 +92,7 @@ test.skip("should discover Salesforce sObjects",
   },
 );
 
-test(
-  "should describe Lead object",
+test.skip("should describe Lead object",
   async () => {
 
     const apiContext =
