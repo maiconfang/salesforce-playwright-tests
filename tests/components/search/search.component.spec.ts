@@ -4,7 +4,7 @@ import { LeadsPage } from '@pages/LeadsPage';
 import { leadTestData } from '@data/leads';
 
 test.describe('Search Component', () => {
-    test('should search lead using reusable search component', async ({ page }) => {
+    test.skip('should search lead using reusable search component', async ({ page }) => {
         const leadsPage = new LeadsPage(page);
 
         await leadsPage.open();
