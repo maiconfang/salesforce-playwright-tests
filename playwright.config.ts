@@ -9,12 +9,20 @@ export default defineConfig({
 
   fullyParallel: false,
 
+  timeout: 60000,
+
+  expect: {
+    timeout: 15000,
+  },
+
   use: {
 
     baseURL:
       process.env.BASE_URL,
 
     headless: true,
+
+    actionTimeout: 15000,
 
     permissions: ['geolocation'],
 

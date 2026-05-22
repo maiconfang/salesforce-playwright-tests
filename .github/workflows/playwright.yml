@@ -39,7 +39,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run UI tests only
-        run: npx playwright test tests/leads tests/components
+        run: npx playwright test tests/leads tests/components --workers=1
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

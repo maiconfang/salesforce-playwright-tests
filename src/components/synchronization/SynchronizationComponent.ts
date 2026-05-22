@@ -26,11 +26,23 @@ export class SynchronizationComponent {
    * Waits until locator becomes clickable.
    */
   async waitUntilClickable(locator: Locator): Promise<void> {
+
+    await locator.waitFor({
+      state: "visible",
+      timeout: 30000,
+    });
+
     await expect(async () => {
+
       await locator.click({
         trial: true,
       });
-    }).toPass();
+
+    }).toPass({
+
+      timeout: 30000,
+
+    });
   }
 
   /**
