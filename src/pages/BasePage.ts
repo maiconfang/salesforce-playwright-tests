@@ -24,8 +24,21 @@ export class BasePage {
   async open(path: string = ""): Promise<void> {
     const baseUrl = process.env.BASE_URL;
 
-     console.log("BASE_URL Test Maicon Fang:", process.env.BASE_URL);
+    if (!baseUrl) {
+      throw new Error("BASE_URL is not defined");
+    }
 
-    await this.page.goto(`${baseUrl}${path}`);
+    const normalizedBaseUrl = baseUrl.endsWith("/")
+      ? baseUrl.slice(0, -1)
+      : baseUrl;
+
+    const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+
+    const finalUrl =
+      path === "" ? normalizedBaseUrl : `${normalizedBaseUrl}${normalizedPath}`;
+
+    console.log("Final URL:", finalUrl);
+
+    await this.page.goto(finalUrl);
   }
 }
