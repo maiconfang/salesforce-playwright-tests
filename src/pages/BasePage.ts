@@ -2,6 +2,7 @@ import { Page } from "@playwright/test";
 
 import { SynchronizationComponent } from "@components/synchronization/SynchronizationComponent";
 import { UiActionsComponent } from "@components/interactions/UiActionsComponent";
+import { Logger } from "@framework-utils/logger/Logger";
 
 export class BasePage {
   protected readonly page: Page;
@@ -37,7 +38,10 @@ export class BasePage {
     const finalUrl =
       path === "" ? normalizedBaseUrl : `${normalizedBaseUrl}${normalizedPath}`;
 
-    console.log("Final URL:", finalUrl);
+    Logger.debug(
+      "Final URL:",
+      finalUrl,
+    );
 
     await this.page.goto(finalUrl);
   }

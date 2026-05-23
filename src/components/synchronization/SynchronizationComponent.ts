@@ -1,5 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { BaseComponent } from "@components/BaseComponent";
+import { Logger } from "@framework-utils/logger/Logger";
 
 /**
  * SynchronizationComponent
@@ -33,7 +34,7 @@ export class SynchronizationComponent {
     locatorName?: string,
   ): Promise<void> {
 
-    console.log(
+    Logger.debug(
       `Waiting for locator: ${locatorName ?? "unknown"}`
     );
 
@@ -42,7 +43,7 @@ export class SynchronizationComponent {
       timeout: 30000,
     });
 
-    console.log(
+    Logger.debug(
       `Locator visible: ${locatorName ?? "unknown"}`
     );
 
@@ -56,7 +57,7 @@ export class SynchronizationComponent {
       timeout: 30000,
     });
 
-    console.log(
+    Logger.debug(
       `Locator clickable: ${locatorName ?? "unknown"}`
     );
   }

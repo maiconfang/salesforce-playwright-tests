@@ -16,6 +16,8 @@ jobs:
     env:
       BASE_URL: ${{ secrets.BASE_URL }}
 
+      DEBUG_LOGS: false
+
       SALESFORCE_USERNAME:
         ${{ secrets.SALESFORCE_USERNAME }}
 

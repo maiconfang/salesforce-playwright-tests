@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
-
 import { SynchronizationComponent } from "@components/synchronization/SynchronizationComponent";
+import { Logger } from "@framework-utils/logger/Logger";
 
 /**
  * Centralizes reusable UI interactions.
@@ -34,7 +34,7 @@ export class UiActionsComponent {
 
     await locator.scrollIntoViewIfNeeded();
 
-    console.log(
+    Logger.debug(
       `Clicking locator: ${
         locatorName ?? "unknown"
       }`,
@@ -58,7 +58,7 @@ export class UiActionsComponent {
         locatorName,
       );
 
-    console.log(
+    Logger.debug(
       `Filling locator: ${
         locatorName ?? "unknown"
       }`,
@@ -84,7 +84,7 @@ export class UiActionsComponent {
         locatorName,
       );
 
-    console.log(
+    Logger.debug(
       `Pressing key on locator: ${
         locatorName ?? "unknown"
       }`,
@@ -107,7 +107,7 @@ export class UiActionsComponent {
         locatorName,
       );
 
-    console.log(
+    Logger.debug(
       `Clearing locator: ${
         locatorName ?? "unknown"
       }`,
@@ -131,7 +131,7 @@ export class UiActionsComponent {
         locatorName,
       );
 
-    console.log(
+    Logger.debug(
       `Typing on locator: ${
         locatorName ?? "unknown"
       }`,

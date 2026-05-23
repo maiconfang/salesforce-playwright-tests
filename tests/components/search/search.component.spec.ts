@@ -15,7 +15,7 @@ test.describe('Search Component', () => {
         //     leadTestData.firstName,
         // );
 
-        // console.log("Search text:", leadTestData.firstName);
+        // Logger.debug("Search text:", leadTestData.firstName);
 
         // await leadsPage.searchGlobalComponent.expectSearchResultVisible(
         //     leadTestData.firstName,

@@ -419,7 +419,94 @@ The logging architecture helps:
 
 This becomes extremely important in enterprise environments.
 
+# Logging Architecture
+
+The framework uses two different logging approaches intentionally.
+
+## Global Framework Logger
+
+Location:
+
+src/utils/logger/
+
+Purpose:
+
+- UI automation logs
+- Synchronization logs
+- Framework execution logs
+- Reusable debug messages
+- Generic framework observability
+
+Example responsibilities:
+
+- Locator tracing
+- Synchronization debugging
+- Execution flow visibility
+- UI interaction logs
+
+This logger was designed to provide lightweight and reusable logging across the entire framework.
+
 ---
+
+## API Specialized Loggers
+
+Location:
+
+src/api/utils/logger/
+
+Purpose:
+
+- API request logging
+- API response logging
+- HTTP tracing
+- API observability
+- Request/response debugging
+
+Example responsibilities:
+
+- Request payload logging
+- Response body logging
+- HTTP status tracing
+- API execution visibility
+
+These loggers are intentionally separated from the global framework logger because API observability has different responsibilities and requirements.
+
+---
+
+## Why Separate Loggers?
+
+This separation follows enterprise architecture principles:
+
+- Separation of Concerns
+- Reusability
+- Maintainability
+- Low Coupling
+- Specialized Responsibilities
+
+Instead of creating a single large logger responsible for everything, the framework keeps generic logging and API logging isolated.
+
+This improves long-term scalability and keeps the architecture cleaner and easier to evolve.
+
+
+---
+
+# Environment-Based Logging
+
+The framework uses environment-driven logging behavior.
+
+This allows different execution environments to control logging verbosity without changing the framework code.
+
+---
+
+## Local Development
+
+Local execution uses the `.env` file.
+
+Example:
+
+```env
+DEBUG_LOGS=true
+
 
 # validators/
 
