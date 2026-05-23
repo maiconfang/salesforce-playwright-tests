@@ -21,12 +21,24 @@ export class UiActionsComponent {
   /**
    * Clicks an element after synchronization.
    */
-  async click(locator: Locator): Promise<void> {
+  async click(
+    locator: Locator,
+    locatorName?: string,
+  ): Promise<void> {
 
     await this.synchronizationComponent
-      .waitUntilClickable(locator);
+      .waitUntilClickable(
+        locator,
+        locatorName,
+      );
 
     await locator.scrollIntoViewIfNeeded();
+
+    console.log(
+      `Clicking locator: ${
+        locatorName ?? "unknown"
+      }`,
+    );
 
     await locator.click();
   }
@@ -37,10 +49,20 @@ export class UiActionsComponent {
   async fill(
     locator: Locator,
     value: string,
+    locatorName?: string,
   ): Promise<void> {
 
     await this.synchronizationComponent
-      .waitUntilClickable(locator);
+      .waitUntilClickable(
+        locator,
+        locatorName,
+      );
+
+    console.log(
+      `Filling locator: ${
+        locatorName ?? "unknown"
+      }`,
+    );
 
     await locator.clear();
 
@@ -53,10 +75,20 @@ export class UiActionsComponent {
   async press(
     locator: Locator,
     key: string,
+    locatorName?: string,
   ): Promise<void> {
 
     await this.synchronizationComponent
-      .waitUntilClickable(locator);
+      .waitUntilClickable(
+        locator,
+        locatorName,
+      );
+
+    console.log(
+      `Pressing key on locator: ${
+        locatorName ?? "unknown"
+      }`,
+    );
 
     await locator.press(key);
   }
@@ -64,10 +96,22 @@ export class UiActionsComponent {
   /**
    * Clears an input field.
    */
-  async clear(locator: Locator): Promise<void> {
+  async clear(
+    locator: Locator,
+    locatorName?: string,
+  ): Promise<void> {
 
     await this.synchronizationComponent
-      .waitUntilClickable(locator);
+      .waitUntilClickable(
+        locator,
+        locatorName,
+      );
+
+    console.log(
+      `Clearing locator: ${
+        locatorName ?? "unknown"
+      }`,
+    );
 
     await locator.clear();
   }
@@ -78,10 +122,20 @@ export class UiActionsComponent {
   async type(
     locator: Locator,
     value: string,
+    locatorName?: string,
   ): Promise<void> {
 
     await this.synchronizationComponent
-      .waitUntilClickable(locator);
+      .waitUntilClickable(
+        locator,
+        locatorName,
+      );
+
+    console.log(
+      `Typing on locator: ${
+        locatorName ?? "unknown"
+      }`,
+    );
 
     await locator.clear();
 

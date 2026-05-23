@@ -25,12 +25,26 @@ export class SynchronizationComponent {
   /**
    * Waits until locator becomes clickable.
    */
-  async waitUntilClickable(locator: Locator): Promise<void> {
+  /**
+   * Waits until locator becomes clickable.
+   */
+  async waitUntilClickable(
+    locator: Locator,
+    locatorName?: string,
+  ): Promise<void> {
+
+    console.log(
+      `Waiting for locator: ${locatorName ?? "unknown"}`
+    );
 
     await locator.waitFor({
       state: "visible",
       timeout: 30000,
     });
+
+    console.log(
+      `Locator visible: ${locatorName ?? "unknown"}`
+    );
 
     await expect(async () => {
 
@@ -39,10 +53,12 @@ export class SynchronizationComponent {
       });
 
     }).toPass({
-
       timeout: 30000,
-
     });
+
+    console.log(
+      `Locator clickable: ${locatorName ?? "unknown"}`
+    );
   }
 
   /**

@@ -38,8 +38,10 @@ export class CrudActionsComponent extends BaseComponent {
    * Clicks the Save button.
    */
   async clickSave(): Promise<void> {
+
     await this.uiActionsComponent.click(
       this.saveButton,
+      "Save button",
     );
   }
 
@@ -49,6 +51,7 @@ export class CrudActionsComponent extends BaseComponent {
   async clickCancel(): Promise<void> {
     await this.uiActionsComponent.click(
       this.cancelButton,
+      "Cancel button",
     );
   }
 }

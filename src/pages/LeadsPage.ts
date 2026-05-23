@@ -27,47 +27,45 @@ import { GlobalSearchComponent } from "@components/search/GlobalSearchComponent"
  * - Enterprise-style design
  */
 export class LeadsPage extends BasePage {
-
   private readonly leadFormComponent: LeadFormComponent;
   private readonly crudActionsComponent: CrudActionsComponent;
   private readonly toastComponent: ToastComponent;
   private readonly modalComponent: ModalComponent;
   private readonly globalSearchComponent: GlobalSearchComponent;
 
-
   constructor(page: Page) {
     super(page);
 
+    this.leadFormComponent = new LeadFormComponent(page);
 
-    this.leadFormComponent =
-      new LeadFormComponent(page);
+    this.crudActionsComponent = new CrudActionsComponent(page);
 
-    this.crudActionsComponent =
-      new CrudActionsComponent(page);
+    this.toastComponent = new ToastComponent(page);
 
-    this.toastComponent =
-      new ToastComponent(page);
+    this.modalComponent = new ModalComponent(page);
 
-    this.modalComponent =
-      new ModalComponent(page);
-
-    this.globalSearchComponent =
-      new GlobalSearchComponent(page);
+    this.globalSearchComponent = new GlobalSearchComponent(page);
   }
 
   async openLeads(): Promise<void> {
+    await this.page.waitForLoadState("networkidle");
 
-    const leadsLink = this.page.getByRole(
-      "link",
-      {
-        name: "Leads",
-      },
-    );
+    const leadsLink = this.page.getByRole("link", {
+      name: "Leads",
+    });
 
     await this.uiActionsComponent.click(
-      leadsLink,
+      leadsLink, 
+      "Leads navigation link"
     );
+  }
 
+  async createLead(lead: LeadData): Promise<void> {
+    await this.openNewLeadForm();
+
+    await this.fill(lead);
+
+    await this.crudActionsComponent.clickSave();
   }
 
   async openNewLeadForm(): Promise<void> {
@@ -81,12 +79,16 @@ export class LeadsPage extends BasePage {
 
     await this.uiActionsComponent.click(
       newButton,
+      "New lead button",
     );
 
     await expect(
-      this.page.getByRole("heading", {
-        name: "New Lead",
-      }),
+      this.page.getByRole(
+        "heading",
+        {
+          name: "New Lead",
+        },
+      ),
     ).toBeVisible();
   }
 
@@ -94,23 +96,14 @@ export class LeadsPage extends BasePage {
     await this.leadFormComponent.fill(lead);
   }
 
-  async createLead(lead: LeadData): Promise<void> {
-    await this.openNewLeadForm();
-
-    await this.fill(lead);
-
-    await this.crudActionsComponent.clickSave();
-  }
-
-  async expectLeadCreated(
-    lead: LeadData,
-  ): Promise<void> {
-
+  async expectLeadCreated(lead: LeadData): Promise<void> {
     const fullName = `${lead.salutation} ${lead.firstName} ${lead.lastName}`;
 
     await this.toastComponent.expectVisible();
 
-    await this.toastComponent.expectMessage(new RegExp(`Lead .*${fullName}.* was created`,),);
+    await this.toastComponent.expectMessage(
+      new RegExp(`Lead .*${fullName}.* was created`),
+    );
 
     await expect(
       this.page.getByRole("heading", {
@@ -120,66 +113,40 @@ export class LeadsPage extends BasePage {
   }
 
   async expectEmptyState(): Promise<void> {
-    const emptyStateMessage =
-      this.page.getByText(
-        "No items to display.",
-        {
-          exact: true,
-        },
-      );
+    const emptyStateMessage = this.page.getByText("No items to display.", {
+      exact: true,
+    });
 
     await expect(emptyStateMessage).toBeVisible();
   }
 
-  async expectGlobalSearchNoResults(
-    searchText: string,
-  ): Promise<void> {
-
+  async expectGlobalSearchNoResults(searchText: string): Promise<void> {
     await expect(
-      this.page.getByText(
-        "Don't give up yet!",
-        {
-          exact: true,
-        },
-      ),
+      this.page.getByText("Don't give up yet!", {
+        exact: true,
+      }),
     ).toBeVisible();
 
     await expect(
-      this.page.getByText(
-        `We searched for "${searchText}".`,
-        {
-          exact: true,
-        },
-      ),
+      this.page.getByText(`We searched for "${searchText}".`, {
+        exact: true,
+      }),
     ).toBeVisible();
   }
 
-  async searchLead(
-    searchText: string,
-  ): Promise<void> {
-
-    await this.globalSearchComponent.search(
-      searchText,
-    );
+  async searchLead(searchText: string): Promise<void> {
+    await this.globalSearchComponent.search(searchText);
   }
 
   async saveLead(): Promise<void> {
     await this.crudActionsComponent.clickSave();
   }
 
-  async expectValidationErrors(
-    fields: string[],
-  ): Promise<void> {
-
-    await this.leadFormComponent
-      .expectValidationErrors(fields);
+  async expectValidationErrors(fields: string[]): Promise<void> {
+    await this.leadFormComponent.expectValidationErrors(fields);
   }
 
   async cancelLeadCreation(): Promise<void> {
     await this.modalComponent.cancel();
   }
-
-
-
 }
-
