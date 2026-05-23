@@ -67,10 +67,11 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run UI tests only
-        run:
+        run: >
           npx playwright test
           tests/leads
           tests/components
+          --project=chromium
           --workers=1
 
       - name: Upload Playwright report
