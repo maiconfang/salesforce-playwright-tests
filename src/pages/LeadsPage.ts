@@ -48,7 +48,7 @@ export class LeadsPage extends BasePage {
   }
 
   async openLeads(): Promise<void> {
-    await this.page.waitForLoadState("networkidle");
+    // await this.page.waitForLoadState("networkidle");
 
     const leadsLink = this.page.getByRole("link", {
       name: "Leads",
