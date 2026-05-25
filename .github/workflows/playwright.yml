@@ -71,8 +71,7 @@ jobs:
       - name: Run UI tests only
         run: >
           npx playwright test
-          tests/leads
-          tests/components
+          tests/ui
           --project=chromium
           --workers=1
 
