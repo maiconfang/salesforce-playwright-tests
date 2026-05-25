@@ -24,8 +24,8 @@
     "@auth/*": ["src/api/auth/*"],
     "@utils/*": ["src/api/utils/*"],
     "@framework-utils/*": ["src/utils/*"],
-
-    "@/*": ["src/*"]
+    "@/*": ["src/*"],
+    "@execution/*": ["src/core/execution/*"],
   },
 
     "ignoreDeprecations": "6.0"

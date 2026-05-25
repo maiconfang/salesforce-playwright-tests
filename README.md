@@ -30,6 +30,46 @@ The main goal is to simulate modern QA workflows involving UI testing, API valid
 
 ---
 
+# Execution Observability
+
+This framework includes an execution observability layer designed to provide human-readable and machine-readable execution telemetry during test execution.
+
+Instead of relying only on raw Playwright errors and stack traces, the framework generates structured execution events that help explain:
+
+- what the test was trying to do
+- which business flow was being executed
+- which UI action was performed
+- where the failure happened
+- the technical reason behind the failure
+
+Each test execution generates an isolated execution-flow.json file containing semantic execution events.
+
+Example:
+
+```json
+[
+  {
+    "type": "FLOW",
+    "message": "Opening Leads page",
+    "timestamp": "2026-05-25 16:48:00"
+  },
+  {
+    "type": "ACTION",
+    "message": "Clicking Leads navigation link",
+    "timestamp": "2026-05-25 16:48:00"
+  },
+  {
+    "type": "ERROR",
+    "message": "Failed to click Leads navigation link",
+    "timestamp": "2026-05-25 16:48:30",
+    "summary": "Leads navigation link was not visible after 30 seconds",
+    "error": "locator.waitFor: Timeout 30000ms exceeded..."
+  }
+]
+```
+
+---
+
 # Planned Features
 
 This project will continue evolving with more enterprise-oriented automation scenarios, including:
@@ -127,9 +167,9 @@ Future videos and updates may include:
 # Commands run playwright
 npx playwright codegen // record elements of screen
 
-npx playwright test tests/leads/leads.create.spec.ts
-npx playwright test tests/leads/ --headed // Run in visual mode
-npx playwright test tests/leads/ // Run all test inside the folder "leads"
+npx playwright test tests/ui/leads/leads.create.spec.ts
+npx playwright test tests/ui/leads/ --headed // Run in visual mode
+npx playwright test tests/ui/leads/ // Run all test inside the folder "leads"
 npx playwright test -g "should cancel lead creation without saving data" --headed // only this test in browser
 npx playwright test -g "should cancel lead creation without saving data" --debug --headed
 npx playwright test tests/components/search/search.component.spec.ts

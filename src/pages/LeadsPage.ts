@@ -6,6 +6,8 @@ import { CrudActionsComponent } from "@components/crud/CrudActionsComponent";
 import { ToastComponent } from "@components/toast/ToastComponent";
 import { ModalComponent } from "@components/modal/ModalComponent";
 import { GlobalSearchComponent } from "@components/search/GlobalSearchComponent";
+import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
+import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
 
 /**
  * LeadsPage
@@ -25,6 +27,13 @@ import { GlobalSearchComponent } from "@components/search/GlobalSearchComponent"
  * - Reusable components
  * - Easier maintenance
  * - Enterprise-style design
+ * 
+ * * Execution Observability:
+ * - Generates semantic execution flow events
+ * - Provides human-readable execution telemetry
+ * - Helps explain test execution behavior
+ * - Supports future AI-powered analysis
+ * - Integrates with the execution observability system
  */
 export class LeadsPage extends BasePage {
   private readonly leadFormComponent: LeadFormComponent;
@@ -49,6 +58,14 @@ export class LeadsPage extends BasePage {
 
   async openLeads(): Promise<void> {
     // await this.page.waitForLoadState("networkidle");
+
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      "Opening Leads page",
+    );
 
     const leadsLink = this.page.getByRole("link", {
       name: "Leads",

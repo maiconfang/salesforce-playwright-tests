@@ -3,6 +3,60 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+/**
+ * Playwright configuration for the Salesforce automation framework.
+ *
+ * This configuration defines:
+ * - global test behavior
+ * - execution timeouts
+ * - browser/runtime settings
+ * - multi-project execution strategy
+ * - authentication setup flow
+ * - UI/API project separation
+ *
+ * Architecture Overview:
+ *
+ * The framework uses a multi-project Playwright architecture
+ * to isolate different execution responsibilities:
+ *
+ * - setup     → authentication/bootstrap
+ * - chromium  → UI/browser automation
+ * - api       → API/service validation
+ *
+ * Benefits:
+ * - clearer execution boundaries
+ * - better scalability
+ * - isolated execution contexts
+ * - improved maintainability
+ * - enterprise-style organization
+ * - optimized CI/CD execution
+ *
+ * UI Project:
+ * - Executes browser-based tests
+ * - Uses authenticated storageState
+ * - Focused on business flows and UI validation
+ *
+ * API Project:
+ * - Executes API-only tests
+ * - Does not launch browser instances
+ * - Optimized for backend/service validation
+ *
+ * Execution Observability:
+ * - UI tests generate execution-flow.json artifacts
+ * - Execution telemetry is isolated per test
+ * - Supports structured execution tracking
+ * - Enables future observability dashboards and AI analysis
+ *
+ * Execution Isolation:
+ * - UI tests only run under tests/ui
+ * - API tests only run under tests/api
+ * - Prevents cross-project execution conflicts
+ *
+ * This configuration was designed incrementally
+ * as part of the framework evolution process,
+ * focusing on readability, scalability,
+ * execution clarity, and maintainability.
+ */
 export default defineConfig({
 
   testDir: './tests',
@@ -38,6 +92,14 @@ export default defineConfig({
 
   projects: [
 
+    /**
+     * Authentication setup project.
+     *
+     * Responsible for:
+     * - authenticating the user
+     * - generating storageState
+     * - preparing authenticated UI sessions
+     */
     {
       name: 'setup',
 
@@ -48,10 +110,25 @@ export default defineConfig({
       },
     },
 
+    /**
+     * UI automation project.
+     *
+     * Executes:
+     * - Playwright UI tests
+     * - Browser-based Salesforce flows
+     * - End-to-end user interactions
+     *
+     * Uses authenticated session generated
+     * by the setup project.
+     */
     {
       name: 'chromium',
 
       dependencies: ['setup'],
+
+      testMatch: [
+        'tests/ui/**/*.spec.ts',
+      ],
 
       use: {
         storageState:
@@ -75,6 +152,10 @@ export default defineConfig({
      */
     {
       name: 'api',
+
+      testMatch: [
+        'tests/api/**/*.spec.ts',
+      ],
 
       use: {
 

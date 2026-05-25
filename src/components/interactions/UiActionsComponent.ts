@@ -1,9 +1,38 @@
 import { Locator, Page } from "@playwright/test";
 import { SynchronizationComponent } from "@components/synchronization/SynchronizationComponent";
 import { Logger } from "@framework-utils/logger/Logger";
+import { ExecutionFlowType }  from "@execution/ExecutionFlowType";
+import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
 
 /**
- * Centralizes reusable UI interactions.
+ * Centralizes reusable UI interactions and execution telemetry events.
+ *
+ * This component acts as the operational interaction layer
+ * of the framework, providing reusable and synchronized
+ * UI actions such as:
+ * - click
+ * - fill
+ * - type
+ * - clear
+ * - keyboard interactions
+ *
+ * Responsibilities:
+ * - execute synchronized UI interactions
+ * - standardize UI operation behavior
+ * - generate execution telemetry events
+ * - register operational success/failure states
+ * - enrich execution observability data
+ *
+ * Execution Observability:
+ * - emits ACTION events before interactions
+ * - emits SUCCESS events after successful operations
+ * - emits ERROR events when failures occur
+ * - generates human-readable execution telemetry
+ * - preserves raw technical errors for debugging
+ *
+ * This component integrates directly with the
+ * execution observability system through
+ * TestExecutionContext and ExecutionContextManager.
  */
 export class UiActionsComponent {
 
@@ -26,22 +55,68 @@ export class UiActionsComponent {
     locatorName?: string,
   ): Promise<void> {
 
-    await this.synchronizationComponent
-      .waitUntilClickable(
-        locator,
-        locatorName,
-      );
+    const target =
+      locatorName ?? "unknown element";
 
-    await locator.scrollIntoViewIfNeeded();
+    const executionContext =
+      ExecutionContextManager.getContext();
 
-    Logger.debug(
-      `Clicking locator: ${
-        locatorName ?? "unknown"
-      }`,
+    executionContext.addStep(
+      ExecutionFlowType.ACTION,
+      `Clicking ${target}`,
     );
 
-    await locator.click();
+    try {
+
+      await this.synchronizationComponent
+        .waitUntilClickable(
+          locator,
+          locatorName,
+        );
+
+      await locator.scrollIntoViewIfNeeded();
+
+      Logger.debug(
+        `Clicking locator: ${
+          locatorName ?? "unknown"
+        }`,
+      );
+
+      await locator.click();
+
+      executionContext.addStep(
+        ExecutionFlowType.SUCCESS,
+        `Successfully clicked ${target}`,
+      );
+
+    } catch (error) {
+
+    const rawError =
+      error instanceof Error
+        ? error.message
+        : String(error);
+
+    const technicalError =
+      rawError
+        .replace(/\u001b\[[0-9;]*m/g, "")
+        .replace(/\n/g, " ")
+        .trim();
+
+    const summary =
+      `${target} was not visible after 30 seconds`;
+
+    executionContext.addStep(
+      ExecutionFlowType.ERROR,
+      `Failed to click ${target}`,
+      undefined,
+      summary,
+      technicalError,
+    );
+
+      throw error;
+    }
   }
+
 
   /**
    * Clears and fills an input.
