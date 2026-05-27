@@ -1,6 +1,12 @@
+import {
+  expect,
+  Locator,
+  Page,
+} from "@playwright/test";
 
-import { expect, Page } from "@playwright/test";
 import { BaseComponent } from "@components/BaseComponent";
+
+import { Logger } from "@framework-utils/logger/Logger";
 
 /**
  * ToastComponent
@@ -25,7 +31,8 @@ export class ToastComponent extends BaseComponent {
   /**
    * Returns the toast locator.
    */
-  private get toast() {
+  private get toast(): Locator {
+
     return this.page.locator(
       ".toastMessage",
     );
@@ -35,17 +42,35 @@ export class ToastComponent extends BaseComponent {
    * Waits until toast disappears.
    */
   async waitDisappear(): Promise<void> {
+
+    Logger.debug(
+      "Waiting for toast to disappear",
+    );
+
     await this.toast.waitFor({
       state: "hidden",
     });
+
+    Logger.debug(
+      "Toast disappeared",
+    );
   }
 
   /**
    * Validates if toast is visible.
    */
   async expectVisible(): Promise<void> {
+
+    Logger.debug(
+      "Validating toast visibility",
+    );
+
     await expect(this.toast)
       .toBeVisible();
+
+    Logger.debug(
+      "Toast is visible",
+    );
   }
 
   /**
@@ -55,15 +80,34 @@ export class ToastComponent extends BaseComponent {
     expectedMessage: RegExp | string,
   ): Promise<void> {
 
+    Logger.debug(
+      `Validating toast message: ${expectedMessage}`,
+    );
+
     await expect(this.toast)
       .toHaveText(expectedMessage);
+
+    Logger.debug(
+      "Toast message validated successfully",
+    );
   }
 
   /**
    * Returns current toast text.
    */
   async getMessage(): Promise<string> {
-    return await this.toast.innerText();
+
+    Logger.debug(
+      "Retrieving toast message",
+    );
+
+    const message =
+      await this.toast.innerText();
+
+    Logger.debug(
+      `Toast message retrieved: ${message}`,
+    );
+
+    return message;
   }
 }
-

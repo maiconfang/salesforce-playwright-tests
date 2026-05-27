@@ -10,6 +10,8 @@ import { ExecutionFlowType } from "./ExecutionFlowType";
  * - synchronization events
  * - successful operations
  * - failures and errors
+ * - data interactions
+ * - form values entered during execution
  *
  * ExecutionFlowStep is the core telemetry structure used
  * by the execution observability system.
@@ -27,13 +29,45 @@ import { ExecutionFlowType } from "./ExecutionFlowType";
  * human-readable and machine-readable execution telemetry.
  */
 export interface ExecutionFlowStep {
+
   type: ExecutionFlowType;
+
   message: string;
+
   timestamp: string;
 
+  /**
+   * Optional business or technical context.
+   *
+   * Examples:
+   * - Authentication
+   * - Lead Creation
+   * - Contact Information
+   */
   context?: string;
+
   durationMs?: number;
 
   error?: string;
+
   summary?: string;
+
+  /**
+   * Optional structured execution data.
+   *
+   * Examples:
+   * - fieldName: "First Name"
+   * - fieldValue: "Maicon"
+   *
+   * This information can later be used for:
+   * - execution replay
+   * - AI analysis
+   * - HTML reports
+   * - debugging
+   * - forensic analysis
+   */
+  metadata?: {
+    fieldName?: string;
+    fieldValue?: string;
+  };
 }

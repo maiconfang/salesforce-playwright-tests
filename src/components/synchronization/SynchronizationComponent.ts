@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { BaseComponent } from "@components/BaseComponent";
+
 import { Logger } from "@framework-utils/logger/Logger";
 
 /**
@@ -17,6 +17,7 @@ import { Logger } from "@framework-utils/logger/Logger";
  * - Enterprise-style architecture
  */
 export class SynchronizationComponent {
+
   private readonly page: Page;
 
   constructor(page: Page) {
@@ -26,16 +27,16 @@ export class SynchronizationComponent {
   /**
    * Waits until locator becomes clickable.
    */
-  /**
-   * Waits until locator becomes clickable.
-   */
   async waitUntilClickable(
     locator: Locator,
     locatorName?: string,
   ): Promise<void> {
 
+    const elementName =
+      locatorName ?? "Unknown locator";
+
     Logger.debug(
-      `Waiting for locator: ${locatorName ?? "unknown"}`
+      `Waiting for locator: ${elementName}`,
     );
 
     await locator.waitFor({
@@ -44,7 +45,7 @@ export class SynchronizationComponent {
     });
 
     Logger.debug(
-      `Locator visible: ${locatorName ?? "unknown"}`
+      `Locator visible: ${elementName}`,
     );
 
     await expect(async () => {
@@ -58,7 +59,7 @@ export class SynchronizationComponent {
     });
 
     Logger.debug(
-      `Locator clickable: ${locatorName ?? "unknown"}`
+      `Locator clickable: ${elementName}`,
     );
   }
 
@@ -66,12 +67,23 @@ export class SynchronizationComponent {
    * Waits until loading spinner disappears.
    */
   async waitLoadingDisappear(): Promise<void> {
-    const spinner = this.page.locator(".slds-spinner");
+
+    const spinner =
+      this.page.locator(".slds-spinner");
 
     if ((await spinner.count()) > 0) {
+
+      Logger.debug(
+        "Waiting for loading spinner to disappear",
+      );
+
       await spinner.first().waitFor({
         state: "hidden",
       });
+
+      Logger.debug(
+        "Loading spinner disappeared",
+      );
     }
   }
 }

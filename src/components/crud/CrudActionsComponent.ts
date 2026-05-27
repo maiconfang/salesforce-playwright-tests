@@ -1,21 +1,27 @@
-import { Locator, Page } from "@playwright/test";
+import {
+  Locator,
+  Page,
+} from "@playwright/test";
 
 import { BaseComponent } from "@components/BaseComponent";
 
 /**
- * Encapsulates reusable CRUD actions.
+ * CrudActionsComponent
  *
- * Responsibilities:
+ * Responsibility:
+ * - Handle reusable CRUD actions
  * - Save actions
  * - Cancel actions
  * - Delete actions
  * - New record actions
  *
- * This component centralizes common CRUD interactions
- * used across Salesforce modules.
+ * Benefits:
+ * - Reusable CRUD behavior
+ * - Cleaner page objects
+ * - Better maintainability
+ * - Enterprise-style architecture
  */
 export class CrudActionsComponent extends BaseComponent {
-
 
   private readonly saveButton: Locator;
 
@@ -24,14 +30,15 @@ export class CrudActionsComponent extends BaseComponent {
   constructor(page: Page) {
     super(page);
 
+    this.saveButton =
+      this.page.getByRole("button", {
+        name: /^Save$/i,
+      });
 
-    this.saveButton = this.page.getByRole("button", {
-      name: /^Save$/i,
-    });
-
-    this.cancelButton = this.page.getByRole("button", {
-      name: /^Cancel$/i,
-    });
+    this.cancelButton =
+      this.page.getByRole("button", {
+        name: /^Cancel$/i,
+      });
   }
 
   /**
@@ -49,6 +56,7 @@ export class CrudActionsComponent extends BaseComponent {
    * Clicks the Cancel button.
    */
   async clickCancel(): Promise<void> {
+
     await this.uiActionsComponent.click(
       this.cancelButton,
       "Cancel button",

@@ -12,9 +12,7 @@
     "@tests/*": ["tests/*"],
     "@data/*": ["test-data/*"],
     "@models/*": ["src/models/*"],
-
     "@api/*": ["src/api/*"],
-
     "@clients/*": ["src/api/clients/*"],
     "@services/*": ["src/api/services/*"],
     "@builders/*": ["src/api/builders/*"],
@@ -26,6 +24,7 @@
     "@framework-utils/*": ["src/utils/*"],
     "@/*": ["src/*"],
     "@execution/*": ["src/core/execution/*"],
+    "@orchestration/*": ["src/orchestration/*"],
   },
 
     "ignoreDeprecations": "6.0"

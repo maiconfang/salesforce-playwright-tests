@@ -1,19 +1,21 @@
 import { Page } from "@playwright/test";
 
-import { SynchronizationComponent } from "@components/synchronization/SynchronizationComponent";
-import { UiActionsComponent } from "@components/interactions/UiActionsComponent";
+import { SynchronizationComponent }
+  from "@components/synchronization/SynchronizationComponent";
+
+import { UiActionsComponent }
+  from "@components/interactions/UiActionsComponent";
+
+import { TestExecutionContext }
+  from "@/core/execution/TestExecutionContext";
+
+import { ExecutionContextManager }
+  from "@/core/execution/ExecutionContextManager";
 
 /**
  * BaseComponent
  *
  * Shared reusable behavior for UI components.
- *
- * Benefits:
- * - Centralized synchronization helpers
- * - Centralized UI interactions
- * - Reduced duplicated code
- * - Better maintainability
- * - More scalable architecture
  */
 export class BaseComponent {
 
@@ -22,6 +24,9 @@ export class BaseComponent {
 
   protected readonly uiActionsComponent:
     UiActionsComponent;
+
+  protected readonly testExecutionContext:
+    TestExecutionContext;
 
   constructor(
     protected readonly page: Page,
@@ -32,5 +37,8 @@ export class BaseComponent {
 
     this.uiActionsComponent =
       new UiActionsComponent(page);
+
+    this.testExecutionContext =
+      ExecutionContextManager.getContext();
   }
 }

@@ -1,8 +1,9 @@
 import { APIRequestContext, APIResponse } from "@playwright/test";
 import { ApiClient } from "./ApiClient";
 import { SalesforceAuthClient } from "@api/auth/SalesforceAuthClient";
-
 import { ApiLogger } from "@api/utils/logger/ApiLogger";
+import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
+import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
 
 export abstract class SalesforceApiClient extends ApiClient {
 
@@ -29,8 +30,7 @@ export abstract class SalesforceApiClient extends ApiClient {
     additionalHeaders?: Record<string, string>,
   ): Promise<Record<string, string>> {
 
-    const token =
-      await this.authClient.authenticate();
+    const token =  await this.authClient.authenticate();
 
     return {
       Authorization: `Bearer ${token}`,
@@ -81,6 +81,27 @@ export abstract class SalesforceApiClient extends ApiClient {
       payload,
     );
 
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.FLOW,
+        `Executing POST request to ${endpoint}`,
+      );
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.DATA,
+        "Sending Salesforce Lead payload",
+        undefined,
+        undefined,
+        undefined,
+        {
+          payload,
+        },
+      );
+
+
     const startTime = Date.now();
 
     const response =
@@ -97,6 +118,13 @@ export abstract class SalesforceApiClient extends ApiClient {
 
     const responseBody =
       await response.json();
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.SUCCESS,
+        `POST ${endpoint} completed with status ${response.status()}`,
+      );
 
     ApiLogger.logResponse(
       response.status(),

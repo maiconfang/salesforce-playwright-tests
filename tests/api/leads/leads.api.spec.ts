@@ -15,9 +15,22 @@ test("should create a Salesforce lead",
                 authClient,
             );
 
+            
+        const now = new Date();
+
+        const formattedDate =
+            `${now.getFullYear()}`
+            + `-${String(now.getMonth() + 1).padStart(2, "0")}`
+            + `-${String(now.getDate()).padStart(2, "0")}`
+            + ` ${String(now.getHours()).padStart(2, "0")}`
+            + `-${String(now.getMinutes()).padStart(2, "0")}`;
+
+        const firstName =
+            `Maicon ${formattedDate}`;
+
         const response =
             await leadsClient.createLead({
-                FirstName: "Maicon Alexander mf",
+                FirstName: firstName,
                 LastName: "Fang",
                 Company: "OpenAI",
             });

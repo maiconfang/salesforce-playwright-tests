@@ -1,9 +1,55 @@
-import { Page, expect } from '@playwright/test';
+import {
+  expect,
+  Locator,
+  Page,
+} from "@playwright/test";
 
-export class HomePage {
-  constructor(private page: Page) {}
+import { BasePage } from "@pages/BasePage";
 
+import { Logger } from "@framework-utils/logger/Logger";
+
+/**
+ * HomePage
+ *
+ * Responsibility:
+ * - Handle Salesforce home page behavior
+ * - Validate application landing state
+ *
+ * Benefits:
+ * - Cleaner test structure
+ * - Reusable home page behavior
+ * - Better maintainability
+ * - Enterprise-style architecture
+ */
+export class HomePage extends BasePage {
+
+  private readonly sellerHomeText: Locator;
+
+  constructor(page: Page) {
+
+    super(page);
+
+    this.sellerHomeText =
+      this.page.getByText(
+        "Seller Home",
+      );
+  }
+
+  /**
+   * Validates that the home page is loaded.
+   */
   async expectLoaded(): Promise<void> {
-    await expect(this.page.getByText('Seller Home')).toBeVisible();
+
+    Logger.debug(
+      "Validating Home page visibility",
+    );
+
+    await expect(
+      this.sellerHomeText,
+    ).toBeVisible();
+
+    Logger.debug(
+      "Home page loaded successfully",
+    );
   }
 }

@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
+
 import { BaseComponent } from "@components/BaseComponent";
 
 /**
@@ -20,22 +21,28 @@ import { BaseComponent } from "@components/BaseComponent";
 export class GlobalSearchComponent extends BaseComponent {
 
   private readonly searchInput: Locator;
+
   private readonly openSearchButton: Locator;
 
   constructor(page: Page) {
     super(page);
 
-    this.openSearchButton = this.page.getByRole("button", {
-      name: /Search/i,
-    });
+    this.openSearchButton =
+      this.page.getByRole("button", {
+        name: /Search/i,
+      });
 
-    this.searchInput = this.page.getByPlaceholder("Search...");
+    this.searchInput =
+      this.page.getByPlaceholder("Search...");
   }
 
   /**
    * Searches for a record using Salesforce list search.
    */
-  async search(searchText: string): Promise<void> {
+  async search(
+    searchText: string,
+  ): Promise<void> {
+
     await this.openSearch();
 
     await this.waitUntilSearchReady();
@@ -45,11 +52,13 @@ export class GlobalSearchComponent extends BaseComponent {
     await this.uiActionsComponent.fill(
       this.searchInput,
       searchText,
+      "Global search input",
     );
 
     await this.uiActionsComponent.press(
       this.searchInput,
       "Enter",
+      "Global search input",
     );
   }
 
@@ -60,15 +69,17 @@ export class GlobalSearchComponent extends BaseComponent {
     resultText: string,
   ): Promise<void> {
 
-    const resultLink = this.page
-      .getByRole("link", {
-        name: resultText,
-      })
-      .first();
+    const resultLink =
+      this.page
+        .getByRole("link", {
+          name: resultText,
+        })
+        .first();
 
-    await expect(resultLink).toBeVisible({
-      timeout: 15000,
-    });
+    await expect(resultLink)
+      .toBeVisible({
+        timeout: 15000,
+      });
   }
 
   /**
@@ -92,6 +103,7 @@ export class GlobalSearchComponent extends BaseComponent {
 
     await this.uiActionsComponent.click(
       this.openSearchButton,
+      "Open search button",
     );
   }
 
@@ -111,6 +123,7 @@ export class GlobalSearchComponent extends BaseComponent {
 
     await this.uiActionsComponent.clear(
       this.searchInput,
+      "Global search input",
     );
   }
 }

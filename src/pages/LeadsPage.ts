@@ -1,16 +1,31 @@
-import { expect, Page } from "@playwright/test";
+import {
+  expect,
+  Locator,
+  Page,
+} from "@playwright/test";
+
 import { BasePage } from "./BasePage";
-import { LeadData } from "src/models/LeadData";
+
+import { LeadData } from "@models/LeadData";
+
 import { LeadFormComponent } from "@components/forms/LeadFormComponent";
 import { CrudActionsComponent } from "@components/crud/CrudActionsComponent";
 import { ToastComponent } from "@components/toast/ToastComponent";
 import { ModalComponent } from "@components/modal/ModalComponent";
 import { GlobalSearchComponent } from "@components/search/GlobalSearchComponent";
+
 import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
 import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
 
+import { Logger } from "@framework-utils/logger/Logger";
+
 /**
  * LeadsPage
+ *
+ * Responsibility:
+ * - Orchestrate Lead business flows
+ * - Coordinate reusable Lead components
+ * - Handle Lead page interactions
  *
  * Architecture:
  * - LeadsPage orchestrates the Lead flow
@@ -27,8 +42,8 @@ import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
  * - Reusable components
  * - Easier maintenance
  * - Enterprise-style design
- * 
- * * Execution Observability:
+ *
+ * Execution Observability:
  * - Generates semantic execution flow events
  * - Provides human-readable execution telemetry
  * - Helps explain test execution behavior
@@ -36,28 +51,57 @@ import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
  * - Integrates with the execution observability system
  */
 export class LeadsPage extends BasePage {
-  private readonly leadFormComponent: LeadFormComponent;
-  private readonly crudActionsComponent: CrudActionsComponent;
-  private readonly toastComponent: ToastComponent;
-  private readonly modalComponent: ModalComponent;
-  private readonly globalSearchComponent: GlobalSearchComponent;
+
+  private readonly leadFormComponent:
+    LeadFormComponent;
+
+  private readonly crudActionsComponent:
+    CrudActionsComponent;
+
+  private readonly toastComponent:
+    ToastComponent;
+
+  private readonly modalComponent:
+    ModalComponent;
+
+  private readonly globalSearchComponent:
+    GlobalSearchComponent;
+
+  private readonly newLeadHeading:
+    Locator;
 
   constructor(page: Page) {
+
     super(page);
 
-    this.leadFormComponent = new LeadFormComponent(page);
+    this.leadFormComponent =
+      new LeadFormComponent(page);
 
-    this.crudActionsComponent = new CrudActionsComponent(page);
+    this.crudActionsComponent =
+      new CrudActionsComponent(page);
 
-    this.toastComponent = new ToastComponent(page);
+    this.toastComponent =
+      new ToastComponent(page);
 
-    this.modalComponent = new ModalComponent(page);
+    this.modalComponent =
+      new ModalComponent(page);
 
-    this.globalSearchComponent = new GlobalSearchComponent(page);
+    this.globalSearchComponent =
+      new GlobalSearchComponent(page);
+
+    this.newLeadHeading =
+      this.page.getByRole(
+        "heading",
+        {
+          name: "New Lead",
+        },
+      );
   }
 
+  /**
+   * Opens the Leads module.
+   */
   async openLeads(): Promise<void> {
-    // await this.page.waitForLoadState("networkidle");
 
     const executionContext =
       ExecutionContextManager.getContext();
@@ -67,32 +111,78 @@ export class LeadsPage extends BasePage {
       "Opening Leads page",
     );
 
-    const leadsLink = this.page.getByRole("link", {
-      name: "Leads",
-    });
+    Logger.debug(
+      "Opening Leads page",
+    );
+
+    const leadsLink =
+      this.page.getByRole("link", {
+        name: "Leads",
+      });
+
+    await expect(leadsLink)
+      .toBeVisible();
 
     await this.uiActionsComponent.click(
-      leadsLink, 
-      "Leads navigation link"
+      leadsLink,
+      "Leads navigation link",
+    );
+
+    Logger.debug(
+      "Leads page opened successfully",
     );
   }
 
-  async createLead(lead: LeadData): Promise<void> {
+  /**
+   * Creates a new Lead.
+   */
+  async createLead(
+    lead: LeadData,
+  ): Promise<void> {
+
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      "Creating new Lead",
+    );
+
+    Logger.debug(
+      "Starting Lead creation flow",
+    );
+
     await this.openNewLeadForm();
 
     await this.fill(lead);
 
     await this.crudActionsComponent.clickSave();
+
+    Logger.debug(
+      "Lead save action executed",
+    );
   }
 
+  /**
+   * Opens the New Lead modal/form.
+   */
   async openNewLeadForm(): Promise<void> {
 
-    const newButton = this.page.getByRole(
-      "button",
-      {
-        name: "New",
-      },
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      "Opening New Lead form",
     );
+
+    const newButton =
+      this.page.getByRole(
+        "button",
+        {
+          name: "New",
+        },
+      );
 
     await this.uiActionsComponent.click(
       newButton,
@@ -100,26 +190,68 @@ export class LeadsPage extends BasePage {
     );
 
     await expect(
-      this.page.getByRole(
-        "heading",
-        {
-          name: "New Lead",
-        },
-      ),
+      this.newLeadHeading,
     ).toBeVisible();
+
+    Logger.debug(
+      "New Lead form opened successfully",
+    );
   }
 
-  async fill(lead: LeadData): Promise<void> {
-    await this.leadFormComponent.fill(lead);
+  /**
+   * Fills the Lead form.
+   */
+  async fill(
+    lead: LeadData,
+  ): Promise<void> {
+
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      "Filling Lead form",
+    );
+
+    Logger.debug(
+      "Filling Lead form",
+    );
+
+    await this.leadFormComponent.fill(
+      lead,
+    );
+
+    Logger.debug(
+      "Lead form filled successfully",
+    );
   }
 
-  async expectLeadCreated(lead: LeadData): Promise<void> {
-    const fullName = `${lead.salutation} ${lead.firstName} ${lead.lastName}`;
+  /**
+   * Validates that the Lead was created successfully.
+   */
+  async expectLeadCreated(
+    lead: LeadData,
+  ): Promise<void> {
+
+    const fullName =
+      [
+        lead.salutation,
+        lead.firstName,
+        lead.lastName,
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+    Logger.debug(
+      `Validating created Lead: ${fullName}`,
+    );
 
     await this.toastComponent.expectVisible();
 
     await this.toastComponent.expectMessage(
-      new RegExp(`Lead .*${fullName}.* was created`),
+      new RegExp(
+        `Lead .*${fullName}.* was created`,
+      ),
     );
 
     await expect(
@@ -127,43 +259,156 @@ export class LeadsPage extends BasePage {
         name: fullName,
       }),
     ).toBeVisible();
+
+    Logger.debug(
+      `Lead created successfully: ${fullName}`,
+    );
   }
 
+  /**
+   * Validates empty state visibility.
+   */
   async expectEmptyState(): Promise<void> {
-    const emptyStateMessage = this.page.getByText("No items to display.", {
-      exact: true,
-    });
 
-    await expect(emptyStateMessage).toBeVisible();
+    Logger.debug(
+      "Validating Leads empty state",
+    );
+
+    const emptyStateMessage =
+      this.page.getByText(
+        "No items to display.",
+        {
+          exact: true,
+        },
+      );
+
+    await expect(
+      emptyStateMessage,
+    ).toBeVisible();
+
+    Logger.debug(
+      "Leads empty state validated successfully",
+    );
   }
 
-  async expectGlobalSearchNoResults(searchText: string): Promise<void> {
+  /**
+   * Validates no results state in global search.
+   */
+  async expectGlobalSearchNoResults(
+    searchText: string,
+  ): Promise<void> {
+
+    Logger.debug(
+      `Validating no results for search: ${searchText}`,
+    );
+
     await expect(
-      this.page.getByText("Don't give up yet!", {
-        exact: true,
-      }),
+      this.page.getByText(
+        "Don't give up yet!",
+        {
+          exact: true,
+        },
+      ),
     ).toBeVisible();
 
     await expect(
-      this.page.getByText(`We searched for "${searchText}".`, {
-        exact: true,
-      }),
+      this.page.getByText(
+        `We searched for "${searchText}".`,
+        {
+          exact: true,
+        },
+      ),
     ).toBeVisible();
+
+    Logger.debug(
+      "Global search no results validated successfully",
+    );
   }
 
-  async searchLead(searchText: string): Promise<void> {
-    await this.globalSearchComponent.search(searchText);
+  /**
+   * Searches for a Lead.
+   */
+  async searchLead(
+    searchText: string,
+  ): Promise<void> {
+
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      `Searching Lead: ${searchText}`,
+    );
+
+    Logger.debug(
+      `Searching Lead: ${searchText}`,
+    );
+
+    await this.globalSearchComponent.search(
+      searchText,
+    );
+
+    Logger.debug(
+      `Lead search executed successfully: ${searchText}`,
+    );
   }
 
+  /**
+   * Clicks Save on Lead form.
+   */
   async saveLead(): Promise<void> {
+
+    Logger.debug(
+      "Saving Lead",
+    );
+
     await this.crudActionsComponent.clickSave();
+
+    Logger.debug(
+      "Lead save executed successfully",
+    );
   }
 
-  async expectValidationErrors(fields: string[]): Promise<void> {
-    await this.leadFormComponent.expectValidationErrors(fields);
+  /**
+   * Validates Lead form validation errors.
+   */
+  async expectValidationErrors(
+    fields: string[],
+  ): Promise<void> {
+
+    Logger.debug(
+      "Validating Lead form validation errors",
+    );
+
+    await this.leadFormComponent
+      .expectValidationErrors(fields);
+
+    Logger.debug(
+      "Lead validation errors validated successfully",
+    );
   }
 
+  /**
+   * Cancels Lead creation.
+   */
   async cancelLeadCreation(): Promise<void> {
+
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      "Cancelling Lead creation",
+    );
+
+    Logger.debug(
+      "Cancelling Lead creation",
+    );
+
     await this.modalComponent.cancel();
+
+    Logger.debug(
+      "Lead creation cancelled successfully",
+    );
   }
 }

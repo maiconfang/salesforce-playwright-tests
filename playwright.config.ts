@@ -88,6 +88,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
 
     trace: 'retain-on-failure',
+
+    video: 'retain-on-failure',
   },
 
   projects: [
@@ -128,6 +130,7 @@ export default defineConfig({
 
       testMatch: [
         'tests/ui/**/*.spec.ts',
+        'tests/api/**/*.hybrid.spec.ts',
       ],
 
       use: {
@@ -155,6 +158,10 @@ export default defineConfig({
 
       testMatch: [
         'tests/api/**/*.spec.ts',
+      ],
+
+      testIgnore: [
+        'tests/api/**/*.hybrid.spec.ts',
       ],
 
       use: {

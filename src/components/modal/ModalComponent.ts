@@ -1,5 +1,12 @@
-import { expect, Page } from "@playwright/test";
+import {
+  expect,
+  Locator,
+  Page,
+} from "@playwright/test";
+
 import { BaseComponent } from "@components/BaseComponent";
+
+import { Logger } from "@framework-utils/logger/Logger";
 
 /**
  * ModalComponent
@@ -17,41 +24,49 @@ import { BaseComponent } from "@components/BaseComponent";
  */
 export class ModalComponent extends BaseComponent {
 
-    constructor(page: Page) {
-        super(page);
-    }
+  constructor(page: Page) {
+    super(page);
+  }
 
-    /**
-     * Validates modal heading visibility.
-     */
-    async expectHeadingVisible(
-        heading: string,
-    ): Promise<void> {
+  /**
+   * Validates modal heading visibility.
+   */
+  async expectHeadingVisible(
+    heading: string,
+  ): Promise<void> {
 
-        await expect(
-            this.page.getByRole("heading", {
-                name: heading,
-            }),
-        ).toBeVisible();
-    }
+    Logger.debug(
+      `Validating modal heading: ${heading}`,
+    );
 
-    /**
-     * Clicks modal cancel button.
-     */
-    async cancel(): Promise<void> {
+    await expect(
+      this.page.getByRole("heading", {
+        name: heading,
+      }),
+    ).toBeVisible();
 
-        const cancelButton =
-            this.page.getByRole("button", {
-                name: "Cancel",
-                exact: true,
-            });
+    Logger.debug(
+      `Modal heading visible: ${heading}`,
+    );
+  }
 
-        await expect(cancelButton)
-            .toBeVisible();
+  /**
+   * Clicks modal cancel button.
+   */
+  async cancel(): Promise<void> {
 
-        await this.uiActionsComponent.click(cancelButton);
+    const cancelButton: Locator =
+      this.page.getByRole("button", {
+        name: "Cancel",
+        exact: true,
+      });
 
-        await cancelButton.click();
-    }
+    await expect(cancelButton)
+      .toBeVisible();
+
+    await this.uiActionsComponent.click(
+      cancelButton,
+      "Modal cancel button",
+    );
+  }
 }
-

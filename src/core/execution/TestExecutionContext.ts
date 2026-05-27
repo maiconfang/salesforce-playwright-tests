@@ -3,6 +3,7 @@ import path from "path";
 import { ExecutionFlowStep } from "./ExecutionFlowStep";
 import { ExecutionFlowType } from "./ExecutionFlowType";
 
+
 /**
  * Represents the active execution context of a single test run.
  *
@@ -25,6 +26,7 @@ import { ExecutionFlowType } from "./ExecutionFlowType";
  * - successful operations
  * - warnings
  * - failures and errors
+ * - execution data interactions
  *
  * These events are persisted into execution-flow.json
  * and can later be consumed by:
@@ -44,7 +46,7 @@ export class TestExecutionContext {
 
   constructor(
     private outputDirectory: string,
-  ) {}
+  ) { }
 
   addStep(
     type: ExecutionFlowType,
@@ -52,6 +54,7 @@ export class TestExecutionContext {
     context?: string,
     summary?: string,
     error?: string,
+    metadata?: Record<string, unknown>,
   ): void {
 
     this.steps.push({
@@ -63,15 +66,58 @@ export class TestExecutionContext {
       context,
       summary,
       error,
+      metadata,
     });
 
     const currentTime =
-    new Date().toLocaleTimeString(
-      "sv-SE",
-    );
+      new Date().toLocaleTimeString(
+        "sv-SE",
+      );
 
     console.log(
       `[${currentTime}] [${type}] ${message}`,
+    );
+  }
+
+  /**
+   * Adds structured execution data telemetry.
+   *
+   * This method is responsible for storing
+   * business-relevant execution values such as:
+   * - form inputs
+   * - selected combobox values
+   * - generated identifiers
+   * - execution parameters
+   *
+   * These events help improve:
+   * - debugging
+   * - execution replay
+   * - AI analysis
+   * - HTML reports
+   * - forensic analysis
+   */
+  addData(
+    fieldName: string,
+    fieldValue: string,
+    context?: string,
+    sensitive = false,
+  ): void {
+
+    const safeValue =
+      sensitive
+        ? "********"
+        : fieldValue;
+
+    this.addStep(
+      ExecutionFlowType.DATA,
+      `${fieldName} = ${safeValue}`,
+      context,
+      undefined,
+      undefined,
+      {
+        fieldName,
+        fieldValue: safeValue,
+      },
     );
   }
 

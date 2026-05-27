@@ -31,7 +31,10 @@ export class ComboboxComponent extends BaseComponent {
         name: label,
       });
 
-    await this.uiActionsComponent.click(combobox);
+    await this.uiActionsComponent.click(
+      combobox,
+      `${label} combobox`,
+    );
 
     await this.page
       .getByRole("option", {
@@ -39,6 +42,10 @@ export class ComboboxComponent extends BaseComponent {
         exact: true,
       })
       .click();
+
+    this.testExecutionContext.addData(
+      label,
+      option,
+    );
   }
 }
-

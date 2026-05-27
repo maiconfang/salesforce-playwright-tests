@@ -43,11 +43,13 @@ export class AddressComponent extends BaseComponent {
 
     await this.uiActionsComponent.click(
       this.addressSearch,
+      "Address Search combobox",
     );
 
     await this.uiActionsComponent.fill(
       this.addressSearch,
       searchText,
+      "Address Search combobox",
     );
 
     const optionLocator =
@@ -58,6 +60,7 @@ export class AddressComponent extends BaseComponent {
 
     await this.uiActionsComponent.click(
       optionLocator,
+      `Address option: ${optionName}`,
     );
 
     /**
@@ -66,6 +69,7 @@ export class AddressComponent extends BaseComponent {
      */
     await this.uiActionsComponent.click(
       this.streetInput,
+      "Street input",
     );
   }
 

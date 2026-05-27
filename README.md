@@ -177,6 +177,9 @@ npx playwright test tests/components/search/search.component.spec.ts
 npx playwright test --headed // seeing with browser
 npx playwright test // without browser
 
+# API
+npx playwright test tests/api/leads/leads.hybrid.spec.ts
+npx playwright test tests/api/leads/leads.hybrid.spec.ts --project=chromium
 
 ---
 

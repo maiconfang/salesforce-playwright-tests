@@ -1,4 +1,5 @@
 import { expect, Page } from "@playwright/test";
+
 import { BaseComponent } from "@components/BaseComponent";
 
 /**
@@ -32,9 +33,21 @@ export class NumberInputComponent extends BaseComponent {
         name: label,
       });
 
-    await this.uiActionsComponent.click(numberInput);
+    await this.uiActionsComponent.click(
+      numberInput,
+      `${label} number input`,
+    );
 
-    await numberInput.fill(value);
+    await this.uiActionsComponent.fill(
+      numberInput,
+      value,
+      `${label} number input`,
+    );
+
+    this.testExecutionContext.addData(
+      label,
+      value,
+    );
   }
 
   async clear(
@@ -46,7 +59,10 @@ export class NumberInputComponent extends BaseComponent {
         name: label,
       });
 
-    await numberInput.clear();
+    await this.uiActionsComponent.clear(
+      numberInput,
+      `${label} number input`,
+    );
   }
 
   async expectValue(
@@ -63,4 +79,3 @@ export class NumberInputComponent extends BaseComponent {
       .toHaveValue(expectedValue);
   }
 }
-

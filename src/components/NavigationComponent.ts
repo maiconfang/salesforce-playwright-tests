@@ -1,19 +1,50 @@
-import { expect, Page } from '@playwright/test';
+import {
+  expect,
+  Locator,
+  Page,
+} from "@playwright/test";
+
+import { BaseComponent } from "@components/BaseComponent";
 
 /**
- * Reusable Salesforce top navigation component.
+ * NavigationComponent
+ *
+ * Responsibility:
+ * - Handle Salesforce top navigation
+ * - Open Salesforce tabs/modules
+ * - Synchronize navigation behavior
+ *
+ * Benefits:
+ * - Reusable navigation behavior
+ * - Cleaner page objects
+ * - Better maintainability
+ * - Enterprise-style architecture
  */
-export class NavigationComponent {
-  constructor(private readonly page: Page) {}
+export class NavigationComponent extends BaseComponent {
 
-  async openTab(tabName: string): Promise<void> {
-    const tab = this.page.getByRole('link', {
-      name: tabName,
-      exact: true,
-    });
+  constructor(page: Page) {
+    super(page);
+  }
 
-    await expect(tab).toBeVisible();
+  /**
+   * Opens a Salesforce tab/module.
+   */
+  async openTab(
+    tabName: string,
+  ): Promise<void> {
 
-    await tab.click();
+    const tab: Locator =
+      this.page.getByRole("link", {
+        name: tabName,
+        exact: true,
+      });
+
+    await expect(tab)
+      .toBeVisible();
+
+    await this.uiActionsComponent.click(
+      tab,
+      `${tabName} navigation tab`,
+    );
   }
 }

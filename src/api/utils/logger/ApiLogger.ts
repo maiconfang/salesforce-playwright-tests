@@ -16,7 +16,11 @@ export class ApiLogger {
 
       console.log(
         "Payload:",
-        JSON.stringify(payload, null, 2),
+        JSON.stringify(
+          payload,
+          null,
+          2,
+        ),
       );
     }
   }
@@ -24,7 +28,7 @@ export class ApiLogger {
   static logResponse(
     status: number,
     duration: number,
-    response?: unknown,
+    response?: any,
   ): void {
 
     console.log("\n========== API RESPONSE ==========");
@@ -33,11 +37,46 @@ export class ApiLogger {
 
     console.log("Duration:", `${duration}ms`);
 
-    if (response) {
+    /*
+     * Keep terminal logs concise.
+     *
+     * Large payloads should be stored
+     * in artifacts/debug files instead
+     * of flooding terminal output.
+     */
+
+    if (!response) {
+      return;
+    }
+
+    if (response.id) {
 
       console.log(
-        "Response:",
-        JSON.stringify(response, null, 2),
+        "ID:",
+        response.id,
+      );
+    }
+
+    if (response.success !== undefined) {
+
+      console.log(
+        "Success:",
+        response.success,
+      );
+    }
+
+    if (
+      response.errors &&
+      response.errors.length > 0
+    ) {
+
+      console.log(
+        "Errors:",
+        JSON.stringify(
+          response.errors,
+          null,
+          2,
+        ),
       );
     }
   }

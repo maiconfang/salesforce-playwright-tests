@@ -1,20 +1,52 @@
-import { test as setup } from '@playwright/test';
-import { LoginPage } from '@pages/LoginPage';
-import { requiredEnv } from '@/utils/env';
+import { test as setup } from "@playwright/test";
 
-setup('authenticate', async ({ page }) => {
-  const loginPage = new LoginPage(page);
+import { LoginPage } from "@pages/LoginPage";
 
-  await loginPage.open();
+import { requiredEnv } from "@/utils/env";
 
-  await loginPage.login(
-    requiredEnv('SALESFORCE_USERNAME'),
-    requiredEnv('SALESFORCE_PASSWORD'),
-  );
+import { TestExecutionContext } from "@/core/execution/TestExecutionContext";
+import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
 
-  await loginPage.expectSuccessfulLogin();
+setup(
+  "authenticate",
+  async ({ page }, testInfo) => {
 
-  await page.context().storageState({
-    path: 'playwright/.auth/user.json',
-  });
-});
+    const executionContext =
+      new TestExecutionContext(
+        testInfo.outputDir,
+      );
+
+    ExecutionContextManager.setContext(
+      executionContext,
+    );
+
+    try {
+
+      const loginPage =
+        new LoginPage(page);
+
+      await loginPage.open();
+
+      await loginPage.login(
+        requiredEnv(
+          "SALESFORCE_USERNAME",
+        ),
+        requiredEnv(
+          "SALESFORCE_PASSWORD",
+        ),
+      );
+
+      await loginPage.expectSuccessfulLogin();
+
+      await page.context().storageState({
+        path: "playwright/.auth/user.json",
+      });
+
+      executionContext.saveFlow();
+
+    } finally {
+
+      ExecutionContextManager.clear();
+    }
+  },
+);

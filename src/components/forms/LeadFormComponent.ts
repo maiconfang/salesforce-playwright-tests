@@ -168,16 +168,19 @@ export class LeadFormComponent extends BaseComponent {
     await this.textboxComponent.fill(
       this.firstNameInput,
       lead.firstName,
+      "First Name input",
     );
 
     await this.textboxComponent.fill(
       this.lastNameInput,
       lead.lastName,
+      "Last Name input",
     );
 
     await this.textboxComponent.fill(
       this.titleInput,
       lead.title,
+      "Title input",
     );
   }
 
@@ -188,16 +191,19 @@ export class LeadFormComponent extends BaseComponent {
     await this.textboxComponent.fill(
       this.companyInput,
       lead.company,
+      "Company input",
     );
 
     await this.textboxComponent.fill(
       this.emailInput,
       lead.email,
+      "Email input",
     );
 
     await this.textboxComponent.fill(
       this.phoneInput,
       lead.phone,
+      "Phone input",
     );
   }
 
@@ -219,11 +225,13 @@ export class LeadFormComponent extends BaseComponent {
     await this.textboxComponent.fill(
       this.streetInput,
       lead.street,
+      "Street input",
     );
 
     await this.textboxComponent.fill(
       this.postalCodeInput,
       lead.postalCode,
+      "Postal Code input",
     );
   }
 
@@ -259,6 +267,7 @@ export class LeadFormComponent extends BaseComponent {
     await this.textboxComponent.fill(
       this.descriptionInput,
       lead.description,
+      "Description input",
     );
   }
 

@@ -16,6 +16,7 @@
  * - successful operations
  * - warnings
  * - failures
+ * - execution data interactions
  *
  * These flow types are used by:
  * - execution-flow.json
@@ -26,9 +27,16 @@
  * - execution timelines
  */
 export enum ExecutionFlowType {
+
   FLOW = "FLOW",
+
   ACTION = "ACTION",
+
   SUCCESS = "SUCCESS",
+
   ERROR = "ERROR",
+
   WARNING = "WARNING",
+
+  DATA = "DATA",
 }
