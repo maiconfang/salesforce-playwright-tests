@@ -1,7 +1,7 @@
 import { TestExecutionContext } from "./TestExecutionContext";
 
 /**
- * Manages the active execution context for the current test execution.
+ * Manages the active execution context for the current test execution. 
  *
  * This class acts as a centralized access point for the
  * current TestExecutionContext during test runtime.

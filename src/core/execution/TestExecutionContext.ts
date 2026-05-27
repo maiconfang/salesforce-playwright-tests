@@ -5,7 +5,7 @@ import { ExecutionFlowType } from "./ExecutionFlowType";
 
 
 /**
- * Represents the active execution context of a single test run.
+ * Represents the active execution context of a single test run. 
  *
  * This class is responsible for collecting, storing,
  * and persisting structured execution telemetry generated
