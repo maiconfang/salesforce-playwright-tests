@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { ExecutionFlowStep } from "./ExecutionFlowStep";
 import { ExecutionFlowType } from "./ExecutionFlowType";
-
+import { ErrorInterpreter } from "./ErrorInterpreter";
 
 /**
  * Represents the active execution context of a single test run. 
@@ -119,6 +119,65 @@ export class TestExecutionContext {
         fieldValue: safeValue,
       },
     );
+  }
+
+  /**
+   * Adds structured execution error telemetry.
+   *
+   * This method is responsible for storing
+   * semantic execution failures generated
+   * during test execution.
+   *
+   * The goal is to provide:
+   * - human-readable error summaries
+   * - structured failure telemetry
+   * - better debugging visibility
+   * - future AI-powered analysis
+   */
+  addError(
+    error: unknown,
+  ): void {
+
+    const parsedError =
+      ErrorInterpreter.parse(error);
+
+    const lastFlowStep =
+      this.steps
+        .filter(step =>
+          step.type === ExecutionFlowType.FLOW,
+        )
+        .at(-1);
+
+    this.steps.push({
+
+      type: ExecutionFlowType.ERROR,
+
+      message: parsedError.message,
+
+      timestamp: new Date().toLocaleString(
+        "sv-SE",
+      ),
+
+      summary:
+        parsedError.summary,
+
+      error:
+        parsedError.error,
+
+      executionContext:
+        lastFlowStep?.message,
+
+      technicalContext:
+        parsedError.technicalContext,
+
+      originTestFile:
+        parsedError.originTestFile,
+
+      stackTraceSummary:
+        parsedError.stackTraceSummary,
+
+        
+    });
   }
 
   saveFlow(): void {

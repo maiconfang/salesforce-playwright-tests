@@ -52,6 +52,27 @@ export interface ExecutionFlowStep {
 
   summary?: string;
 
+  executionContext?: string;
+
+  technicalContext?: {
+
+    locator?: string;
+
+    timeout?: string;
+
+    reason?: string;
+  };
+
+  /**
+ * Original test file where the execution failure propagated.
+ */
+  originTestFile?: string;
+
+  /**
+   * Simplified semantic execution trace.
+   */
+  stackTraceSummary?: string[];
+
   /**
    * Optional structured execution data.
    *

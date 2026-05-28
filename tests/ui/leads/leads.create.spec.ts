@@ -38,9 +38,9 @@ test.describe('Leads Create', () => {
           testInfo.outputDir,
         );
 
-        ExecutionContextManager.setContext(
-          executionContext,
-        );
+      ExecutionContextManager.setContext(
+        executionContext,
+      );
 
       try {
 
@@ -58,9 +58,16 @@ test.describe('Leads Create', () => {
           leadTestData,
         );
 
+      } catch (error) {
+
+        executionContext.addError(error);
+
+        throw error;
+
       } finally {
 
         executionContext.saveFlow();
+
         ExecutionContextManager.clear();
       }
     },
