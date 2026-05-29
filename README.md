@@ -182,6 +182,8 @@ npx playwright test // without browser
 npx playwright test tests/api/leads/leads.hybrid.spec.ts
 npx playwright test tests/api/leads/leads.hybrid.spec.ts --project=chromium
 
+npx playwright test tests/api/leads/leads.api.spec.ts --grep "should delete a lead"
+
 npx playwright test tests/api/leads/leads.create.api.spec.ts
 npx playwright test tests/api/leads/leads.get.api.spec.ts
 npx playwright test tests/api/leads/leads.update.api.spec.ts
