@@ -1,6 +1,8 @@
+import { Lead } from "@api/models/Lead";
+
 export class LeadBuilder {
-  private lead = {
-    FirstName: "Maicon",
+
+  private lead: Lead = {
     LastName: "Fang",
     Company: "TaskManagerPlus",
   };
@@ -23,7 +25,9 @@ export class LeadBuilder {
     return this;
   }
 
-  build() {
-    return this.lead;
+  build(): Lead {
+    return {
+      ...this.lead,
+    };
   }
 }

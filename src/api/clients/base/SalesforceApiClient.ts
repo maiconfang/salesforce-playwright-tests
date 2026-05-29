@@ -30,7 +30,7 @@ export abstract class SalesforceApiClient extends ApiClient {
     additionalHeaders?: Record<string, string>,
   ): Promise<Record<string, string>> {
 
-    const token =  await this.authClient.authenticate();
+    const token = await this.authClient.authenticate();
 
     return {
       Authorization: `Bearer ${token}`,
@@ -54,6 +54,21 @@ export abstract class SalesforceApiClient extends ApiClient {
     endpoint: string,
   ): Promise<APIResponse> {
 
+    ApiLogger.logRequest(
+      "GET",
+      endpoint,
+    );
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.FLOW,
+        `Executing GET request to ${endpoint}`,
+      );
+
+    const startTime =
+      Date.now();
+
     const response =
       await this.request.get(
         this.buildEndpoint(endpoint),
@@ -62,7 +77,28 @@ export abstract class SalesforceApiClient extends ApiClient {
         },
       );
 
-    await this.validateResponse(response);
+    const duration =
+      Date.now() - startTime;
+
+    await this.validateResponse(
+      response,
+    );
+
+    const responseBody =
+      await response.json();
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.SUCCESS,
+        `GET ${endpoint} completed with status ${response.status()}`,
+      );
+
+    ApiLogger.logResponse(
+      response.status(),
+      duration,
+      responseBody,
+    );
 
     return response;
   }
@@ -92,7 +128,7 @@ export abstract class SalesforceApiClient extends ApiClient {
       .getContext()
       .addStep(
         ExecutionFlowType.DATA,
-        "Sending Salesforce Lead payload",
+        `Sending payload to ${endpoint}`,
         undefined,
         undefined,
         undefined,
@@ -143,6 +179,22 @@ export abstract class SalesforceApiClient extends ApiClient {
     payload: unknown,
   ): Promise<APIResponse> {
 
+    ApiLogger.logRequest(
+      "PATCH",
+      endpoint,
+      payload,
+    );
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.FLOW,
+        `Executing PATCH request to ${endpoint}`,
+      );
+
+    const startTime =
+      Date.now();
+
     const response =
       await this.request.patch(
         this.buildEndpoint(endpoint),
@@ -152,7 +204,27 @@ export abstract class SalesforceApiClient extends ApiClient {
         },
       );
 
-    await this.validateResponse(response);
+    const duration =
+      Date.now() - startTime;
+
+    await this.validateResponse(
+      response,
+    );
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.SUCCESS,
+        `PATCH ${endpoint} completed with status ${response.status()}`,
+      );
+
+    ApiLogger.logResponse(
+      response.status(),
+      duration,
+      {
+        status: response.status(),
+      },
+    );
 
     return response;
   }
@@ -164,6 +236,21 @@ export abstract class SalesforceApiClient extends ApiClient {
     endpoint: string,
   ): Promise<APIResponse> {
 
+    ApiLogger.logRequest(
+      "DELETE",
+      endpoint,
+    );
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.FLOW,
+        `Executing DELETE request to ${endpoint}`,
+      );
+
+    const startTime =
+      Date.now();
+
     const response =
       await this.request.delete(
         this.buildEndpoint(endpoint),
@@ -172,7 +259,27 @@ export abstract class SalesforceApiClient extends ApiClient {
         },
       );
 
-    await this.validateResponse(response);
+    const duration =
+      Date.now() - startTime;
+
+    await this.validateResponse(
+      response,
+    );
+
+    ExecutionContextManager
+      .getContext()
+      .addStep(
+        ExecutionFlowType.SUCCESS,
+        `DELETE ${endpoint} completed with status ${response.status()}`,
+      );
+
+    ApiLogger.logResponse(
+      response.status(),
+      duration,
+      {
+        status: response.status(),
+      },
+    );
 
     return response;
   }

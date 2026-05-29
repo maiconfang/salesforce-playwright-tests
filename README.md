@@ -177,9 +177,29 @@ npx playwright test tests/components/search/search.component.spec.ts
 npx playwright test --headed // seeing with browser
 npx playwright test // without browser
 
+
 # API
 npx playwright test tests/api/leads/leads.hybrid.spec.ts
 npx playwright test tests/api/leads/leads.hybrid.spec.ts --project=chromium
+
+npx playwright test tests/api/leads/leads.create.api.spec.ts
+npx playwright test tests/api/leads/leads.get.api.spec.ts
+npx playwright test tests/api/leads/leads.update.api.spec.ts
+npx playwright test tests/api/leads/leads.delete.api.spec.ts
+
+npx playwright test tests/api/account/accounts.get.api.spec.ts
+npx playwright test tests/api/account/accounts.create.api.spec.ts
+npx playwright test tests/api/account/accounts.update.api.spec.ts
+npx playwright test tests/api/accounts/accounts.delete.api.spec.ts
+
+npx playwright test tests/api/contact/contacts.create.api.spec.ts
+npx playwright test tests/api/contact/contacts.get.api.spec.ts
+npx playwright test tests/api/contact/contacts.update.api.spec.ts
+npx playwright test tests/api/contact/contacts.delete.api.spec.ts
+
+
+# Terminal
+tree /F /A | findstr /V /I "node_modules .git test-results" > estrutura.txt // show the structure of my project
 
 ---
 
