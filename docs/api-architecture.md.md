@@ -320,16 +320,6 @@ This pattern is heavily used in enterprise systems.
 
 ---
 
-# fixtures/
-
-Responsible for reusable Playwright fixtures.
-
-Example:
-
-```text
-fixtures/
-├── api.fixture.ts
-```
 
 ## Benefits
 

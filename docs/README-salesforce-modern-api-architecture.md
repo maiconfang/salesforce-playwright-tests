@@ -46,8 +46,6 @@ src/
  │    │    ├── SalesforceCreateResponse.ts
  │    │    └── SalesforceErrorResponse.ts
  │    │
- │    ├── fixtures/
- │    │    └── api.fixture.ts
  │    │
  │    ├── helpers/
  │    │    ├── apiHeaders.ts

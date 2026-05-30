@@ -179,6 +179,8 @@ npx playwright test // without browser
 
 
 # API
+npx playwright test tests/api  // run all test inside folder "api" 
+
 npx playwright test tests/api/leads/leads.hybrid.spec.ts
 npx playwright test tests/api/leads/leads.hybrid.spec.ts --project=chromium
 
@@ -199,6 +201,15 @@ npx playwright test tests/api/contact/contacts.get.api.spec.ts
 npx playwright test tests/api/contact/contacts.update.api.spec.ts
 npx playwright test tests/api/contact/contacts.delete.api.spec.ts
 
+npx playwright test tests/api/task/tasks.create.api.spec.ts
+npx playwright test tests/api/task/tasks.get.api.spec.ts
+npx playwright test tests/api/task/tasks.update.api.spec.ts
+npx playwright test tests/api/task/tasks.delete.api.spec.ts
+
+npx playwright test tests/api/opportunity/opportunities.create.api.spec.ts
+npx playwright test tests/api/opportunity/opportunities.get.api.spec.ts
+npx playwright test tests/api/opportunity/opportunities.update.api.spec.ts
+npx playwright test tests/api/opportunity/opportunities.delete.api.spec.ts
 
 # Terminal
 tree /F /A | findstr /V /I "node_modules .git test-results" > estrutura.txt // show the structure of my project

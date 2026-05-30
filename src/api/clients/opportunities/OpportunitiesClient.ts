@@ -12,10 +12,10 @@ import { SalesforceAuthClient }
 import { SalesforceCreateResponse }
   from "@contracts/SalesforceCreateResponse";
 
-import { Task }
-  from "@api/models/Task";
+import { Opportunity }
+  from "@api/models/Opportunity";
 
-export class TasksClient
+export class OpportunitiesClient
   extends SalesforceApiClient {
 
   constructor(
@@ -28,42 +28,42 @@ export class TasksClient
     );
   }
 
-  async createTask(
-    payload: Partial<Task>,
+  async createOpportunity(
+    payload: Partial<Opportunity>,
   ): Promise<SalesforceCreateResponse> {
 
     return this.post(
-      "/sobjects/Task/",
+      "/sobjects/Opportunity/",
       payload,
     );
   }
 
-  async getTaskById(
-    taskId: string,
+  async getOpportunityById(
+    opportunityId: string,
   ): Promise<APIResponse> {
 
     return this.get(
-      `/sobjects/Task/${taskId}`,
+      `/sobjects/Opportunity/${opportunityId}`,
     );
   }
 
-  async updateTask(
-    taskId: string,
-    payload: Partial<Task>,
+  async updateOpportunity(
+    opportunityId: string,
+    payload: Partial<Opportunity>,
   ): Promise<APIResponse> {
 
     return this.patch(
-      `/sobjects/Task/${taskId}`,
+      `/sobjects/Opportunity/${opportunityId}`,
       payload,
     );
   }
 
-  async deleteTask(
-    taskId: string,
+  async deleteOpportunity(
+    opportunityId: string,
   ): Promise<APIResponse> {
 
     return this.delete(
-      `/sobjects/Task/${taskId}`,
+      `/sobjects/Opportunity/${opportunityId}`,
     );
   }
 }
