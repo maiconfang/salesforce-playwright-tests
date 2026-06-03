@@ -69,6 +69,46 @@ export default defineConfig({
     timeout: 15000,
   },
 
+  /**
+   * Reporting Integration
+   *
+   * Generates the raw Playwright execution artifact
+   * consumed by the Quality Dashboard reporting engine.
+   *
+   * Generated File:
+   *
+   * reports/raw/playwright-results.json
+   *
+   * Architecture:
+   *
+   * Playwright
+   *      │
+   *      ▼
+   * playwright-results.json
+   *      │
+   *      ▼
+   * PlaywrightResultsParser
+   *      │
+   *      ▼
+   * ExecutionContextParser
+   *      │
+   *      ▼
+   * execution-report.json
+  */
+ 
+  reporter: [
+
+    ['list'],
+
+    [
+      'json',
+      {
+        outputFile:
+          'reports/raw/playwright-results.json'
+      }
+    ]
+  ],
+
   use: {
 
     baseURL:

@@ -1,0 +1,179 @@
+{
+  "executionId": "20260603173958",
+  "project": "salesforce-playwright-tests",
+  "executionDate": "2026-06-03T17:39:58.495Z",
+  "passed": 24,
+  "failed": 0,
+  "skipped": 7,
+  "duration": 59970,
+  "summary": {
+    "totalTests": 31,
+    "executedTests": 24,
+    "successRate": 100,
+    "executionStatus": "STABLE"
+  },
+  "statistics": {
+    "flows": 47,
+    "actions": 13,
+    "successes": 55,
+    "dataEvents": 37,
+    "errors": 0
+  },
+  "tests": [
+    {
+      "name": "authenticate",
+      "status": "PASSED",
+      "duration": 6038
+    },
+    {
+      "name": "should create a Salesforce lead using hybrid workflow",
+      "status": "PASSED",
+      "duration": 6924
+    },
+    {
+      "name": "should create a new contact",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should create a new lead",
+      "status": "PASSED",
+      "duration": 24902
+    },
+    {
+      "name": "should display validation errors when required fields are empty",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should cancel lead creation without saving data",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should create an account via Salesforce API",
+      "status": "PASSED",
+      "duration": 1491
+    },
+    {
+      "name": "should delete an account",
+      "status": "PASSED",
+      "duration": 1722
+    },
+    {
+      "name": "should get an account by id",
+      "status": "PASSED",
+      "duration": 1433
+    },
+    {
+      "name": "should update an account",
+      "status": "PASSED",
+      "duration": 1562
+    },
+    {
+      "name": "should authenticate with Salesforce API",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should create a contact via Salesforce API",
+      "status": "PASSED",
+      "duration": 1134
+    },
+    {
+      "name": "should delete a contact",
+      "status": "PASSED",
+      "duration": 1221
+    },
+    {
+      "name": "should get a contact by id",
+      "status": "PASSED",
+      "duration": 926
+    },
+    {
+      "name": "should update a contact",
+      "status": "PASSED",
+      "duration": 1110
+    },
+    {
+      "name": "should discover Salesforce API endpoints",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should discover Salesforce sObjects",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should describe Lead object",
+      "status": "SKIPPED",
+      "duration": 0
+    },
+    {
+      "name": "should create a lead via Salesforce API",
+      "status": "PASSED",
+      "duration": 555
+    },
+    {
+      "name": "should delete a lead",
+      "status": "PASSED",
+      "duration": 886
+    },
+    {
+      "name": "should get a lead by id",
+      "status": "PASSED",
+      "duration": 1188
+    },
+    {
+      "name": "should create lead using API only workflow",
+      "status": "PASSED",
+      "duration": 636
+    },
+    {
+      "name": "should update a lead",
+      "status": "PASSED",
+      "duration": 1145
+    },
+    {
+      "name": "should create opportunity via Salesforce API",
+      "status": "PASSED",
+      "duration": 662
+    },
+    {
+      "name": "should delete opportunity via Salesforce API",
+      "status": "PASSED",
+      "duration": 964
+    },
+    {
+      "name": "should retrieve opportunity by id via Salesforce API",
+      "status": "PASSED",
+      "duration": 794
+    },
+    {
+      "name": "should update opportunity via Salesforce API",
+      "status": "PASSED",
+      "duration": 1105
+    },
+    {
+      "name": "should create task via Salesforce API",
+      "status": "PASSED",
+      "duration": 551
+    },
+    {
+      "name": "should delete task via Salesforce API",
+      "status": "PASSED",
+      "duration": 1101
+    },
+    {
+      "name": "should retrieve task by id via Salesforce API",
+      "status": "PASSED",
+      "duration": 857
+    },
+    {
+      "name": "should update task via Salesforce API",
+      "status": "PASSED",
+      "duration": 1063
+    }
+  ]
+}

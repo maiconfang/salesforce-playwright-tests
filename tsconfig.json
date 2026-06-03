@@ -25,6 +25,7 @@
     "@/*": ["src/*"],
     "@execution/*": ["src/core/execution/*"],
     "@orchestration/*": ["src/orchestration/*"],
+    "@reporting/*": ["src/reporting/*"],
   },
 
     "ignoreDeprecations": "6.0"

@@ -30,6 +30,44 @@ The main goal is to simulate modern QA workflows involving UI testing, API valid
 
 ---
 
+# Quality Reporting Engine
+
+The framework includes a Quality Reporting Engine designed to transform raw Playwright execution artifacts into actionable quality intelligence.
+
+Instead of relying only on execution status and stack traces, the reporting engine combines execution statistics with execution context to provide richer failure diagnostics.
+
+Generated Artifacts:
+
+- playwright-results.json
+- execution-flow.json
+- execution-report.json
+
+Current Capabilities:
+
+- Execution Summary
+- Failure Diagnostics
+- Root Cause Analysis
+- Recommendations
+- Failure Journey
+- Test Data Visibility
+- Business Impact Analysis
+
+Reporting Pipeline:
+
+playwright-results.json
++
+execution-flow.json
+↓
+execution-report.json
+
+Additional documentation:
+
+- docs/execution-observability.md
+- docs/quality-dashboard-architecture.md
+- docs/quality-dashboard-roadmap.md
+
+---
+
 # Execution Observability
 
 This framework includes an execution observability layer designed to provide human-readable and machine-readable execution telemetry during test execution.
@@ -259,212 +297,6 @@ However, using `--headed` is recommended because it keeps CI/CD pipelines optimi
 
 ---
 
-# Author
-
-Created by Maicon Fang as part of his continuous journey in Software Quality Assurance, Test Automation, and enterprise application testing.
-
-
-Video hoje rsrsr
-Hello everyone! 👋
-
-In this video, I’d like to share the evolution of my Salesforce Playwright automation framework project.
-
-Recently, I’ve been focusing a lot on improving the project architecture and making the framework more scalable, organized, and closer to what we often see in enterprise environments.
-
-Some of the things I’ve been working on include:
-
-• better separation of responsibilities
-• reusable components
-• cleaner page organization
-• centralized actions and synchronization
-• improved maintainability
-• a more modular structure for future growth
-• Page Object Pattern (POM)
-• component-based architecture
-• composition over inheritance
-• layered architecture
-• reusable UI actions
-• declarative test design
-
-The main goal is not only to automate tests, but also to build a framework that is easier to maintain, expand, and understand over time.
-
-In this project, Pages are responsible for orchestrating flows, while Components encapsulate reusable UI behaviors such as navigation, forms, searches, synchronization, and actions.
-
-I’m also trying to keep the tests more readable and business-oriented, focusing more on intention rather than implementation details.
-
-In the video, I’ll show part of the project structure, explain some architectural decisions, and demonstrate how the framework is evolving step by step. 😊
-
-
-----------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------
-
-# Topics and Ideas to Mention in the Video
-
-## Project Evolution
-
-* The project started much simpler and evolved over time
-* The architecture improved as new challenges appeared
-* The framework is being built incrementally instead of overengineering too early
-
----
-
-## Main Goals of the Framework
-
-* Build a scalable automation framework
-* Improve maintainability
-* Reduce duplicated logic
-* Keep the project organized as it grows
-* Make the framework easier to understand and expand
-
----
-
-## Architectural Improvements
-
-* Better separation of responsibilities
-* Cleaner page organization
-* Reusable components
-* Centralized synchronization and actions
-* Modular architecture prepared for future growth
-
----
-
-## Patterns and Approaches Being Used
-
-* Page Object Pattern (POM)
-* Component-based architecture
-* Composition over inheritance
-* Layered architecture
-* Reusable UI actions
-* Declarative test design
-* Centralized synchronization strategy
-
----
-
-## Why These Decisions Matter
-
-* Reduce maintenance effort
-* Improve readability
-* Avoid duplicated logic
-* Make tests more reusable
-* Keep the framework easier to scale
-* Make business flows easier to understand
-
----
-
-## Readability and Business-Oriented Tests
-
-* Focus more on intention rather than implementation details
-* Keep tests cleaner and more readable
-* Make tests closer to real business flows
-
-Example:
-Instead of:
-
-```ts
-page.locator(...).click();
-```
-
-Using:
-
-```ts
-await leadsPage.createLead(...);
-```
-
----
-
-## Component Reusability
-
-* Components can be reused across different Salesforce modules
-* Navigation, forms, searches, synchronization, and actions are isolated into reusable pieces
-
----
-
-## Synchronization Strategy
-
-* Centralized synchronization helps reduce flaky tests
-* Wait logic is isolated and reusable
-* Better stability and maintainability
-
----
-
-## Framework Philosophy
-
-* Avoid creating a “magic framework”
-* Keep the project understandable and easy to navigate
-* Architecture should evolve based on real problems and real project needs
-
----
-
-## Learning and Continuous Improvement
-
-* The project is also part of a continuous learning journey
-* The framework evolves step by step as new ideas and improvements are explored
-
----
-
-## Future Vision
-
-* Prepare the framework for future modules and integrations
-* Continue improving scalability and maintainability
-* Expand reusable architecture patterns over time
-
-
-
-
--------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------
-
-This diagram represents the current architecture and flow of my Salesforce Playwright automation framework project.
-
-The main goal of this structure is to create a framework that is scalable, organized, reusable, and easier to maintain as the project grows.
-
-At the top, we have the test layer, where the Playwright test specifications are executed. These tests focus more on business flows and high-level actions instead of low-level implementation details.
-
-The tests interact with the UI layer through Pages and Components.
-
-The Pages work as orchestrators, meaning they coordinate the flow of the automation. Instead of containing all the logic directly inside the tests, the Pages delegate responsibilities to reusable Components.
-
-The Components encapsulate reusable UI behaviors such as:
-
-* navigation
-* forms
-* synchronization
-* actions
-* searches
-
-This helps reduce duplicated logic and improves maintainability.
-
-One important part of the architecture is the centralized synchronization strategy. Instead of spreading waits and retry logic across the tests, synchronization is isolated into reusable components to improve stability and reduce flaky tests.
-
-Another important part is the reusable UI actions layer, which centralizes common operations like clicking, filling inputs, and interacting with elements. This makes the framework cleaner and easier to evolve over time.
-
-The diagram also shows the API layer, which is separated from the UI layer. The idea behind this separation is to keep responsibilities isolated and prepare the framework for future hybrid automation strategies.
-
-The API layer contains:
-
-* authentication
-* base API communication
-* domain-specific clients
-
-This architecture also follows several modern automation patterns, including:
-
-* Page Object Pattern
-* Component-based architecture
-* Composition over inheritance
-* Layered architecture
-* Declarative test design
-
-One thing I’m trying to achieve with this project is making the tests more readable and closer to business flows instead of focusing too much on implementation details.
-
-Overall, this project is evolving step by step with a strong focus on maintainability, scalability, readability, and reusable architecture.
-
-
------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------
-
 # SOLID, DRY and Clean Code in This Project
 
 As the framework started growing, I realized the importance of improving the architecture and organizing the project in a cleaner and more maintainable way.
@@ -522,4 +354,8 @@ The idea is to make the framework easier to navigate and understand, especially 
 ---
 
 Overall, these concepts are helping the framework evolve into a cleaner, more scalable, and more reusable automation architecture.
+
+# Author
+
+Created by Maicon Fang as part of his continuous journey in Software Quality Assurance, Test Automation, and enterprise application testing.
 
