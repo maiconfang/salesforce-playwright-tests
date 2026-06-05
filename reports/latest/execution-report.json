@@ -1,11 +1,11 @@
 {
-  "executionId": "20260603173958",
+  "executionId": "20260604112707",
   "project": "salesforce-playwright-tests",
-  "executionDate": "2026-06-03T17:39:58.495Z",
+  "executionDate": "2026-06-04T11:27:07.108Z",
   "passed": 24,
   "failed": 0,
   "skipped": 7,
-  "duration": 59970,
+  "duration": 64015,
   "summary": {
     "totalTests": 31,
     "executedTests": 24,
@@ -23,12 +23,12 @@
     {
       "name": "authenticate",
       "status": "PASSED",
-      "duration": 6038
+      "duration": 9343
     },
     {
       "name": "should create a Salesforce lead using hybrid workflow",
       "status": "PASSED",
-      "duration": 6924
+      "duration": 5682
     },
     {
       "name": "should create a new contact",
@@ -38,7 +38,7 @@
     {
       "name": "should create a new lead",
       "status": "PASSED",
-      "duration": 24902
+      "duration": 24254
     },
     {
       "name": "should display validation errors when required fields are empty",
@@ -53,22 +53,22 @@
     {
       "name": "should create an account via Salesforce API",
       "status": "PASSED",
-      "duration": 1491
+      "duration": 1528
     },
     {
       "name": "should delete an account",
       "status": "PASSED",
-      "duration": 1722
+      "duration": 2665
     },
     {
       "name": "should get an account by id",
       "status": "PASSED",
-      "duration": 1433
+      "duration": 1725
     },
     {
       "name": "should update an account",
       "status": "PASSED",
-      "duration": 1562
+      "duration": 1880
     },
     {
       "name": "should authenticate with Salesforce API",
@@ -78,22 +78,22 @@
     {
       "name": "should create a contact via Salesforce API",
       "status": "PASSED",
-      "duration": 1134
+      "duration": 1394
     },
     {
       "name": "should delete a contact",
       "status": "PASSED",
-      "duration": 1221
+      "duration": 1210
     },
     {
       "name": "should get a contact by id",
       "status": "PASSED",
-      "duration": 926
+      "duration": 900
     },
     {
       "name": "should update a contact",
       "status": "PASSED",
-      "duration": 1110
+      "duration": 1084
     },
     {
       "name": "should discover Salesforce API endpoints",
@@ -113,67 +113,67 @@
     {
       "name": "should create a lead via Salesforce API",
       "status": "PASSED",
-      "duration": 555
+      "duration": 590
     },
     {
       "name": "should delete a lead",
       "status": "PASSED",
-      "duration": 886
+      "duration": 1041
     },
     {
       "name": "should get a lead by id",
       "status": "PASSED",
-      "duration": 1188
+      "duration": 1028
     },
     {
       "name": "should create lead using API only workflow",
       "status": "PASSED",
-      "duration": 636
+      "duration": 522
     },
     {
       "name": "should update a lead",
       "status": "PASSED",
-      "duration": 1145
+      "duration": 1694
     },
     {
       "name": "should create opportunity via Salesforce API",
       "status": "PASSED",
-      "duration": 662
+      "duration": 660
     },
     {
       "name": "should delete opportunity via Salesforce API",
       "status": "PASSED",
-      "duration": 964
+      "duration": 1222
     },
     {
       "name": "should retrieve opportunity by id via Salesforce API",
       "status": "PASSED",
-      "duration": 794
+      "duration": 746
     },
     {
       "name": "should update opportunity via Salesforce API",
       "status": "PASSED",
-      "duration": 1105
+      "duration": 1232
     },
     {
       "name": "should create task via Salesforce API",
       "status": "PASSED",
-      "duration": 551
+      "duration": 535
     },
     {
       "name": "should delete task via Salesforce API",
       "status": "PASSED",
-      "duration": 1101
+      "duration": 1169
     },
     {
       "name": "should retrieve task by id via Salesforce API",
       "status": "PASSED",
-      "duration": 857
+      "duration": 851
     },
     {
       "name": "should update task via Salesforce API",
       "status": "PASSED",
-      "duration": 1063
+      "duration": 1060
     }
   ]
 }

@@ -10,7 +10,7 @@
     "@pages/*": ["src/pages/*"],
     "@components/*": ["src/components/*"],
     "@tests/*": ["tests/*"],
-    "@data/*": ["test-data/*"],
+    "@test-data/*": ["test-data/*"],
     "@models/*": ["src/models/*"],
     "@api/*": ["src/api/*"],
     "@clients/*": ["src/api/clients/*"],

@@ -215,6 +215,10 @@ npx playwright test tests/components/search/search.component.spec.ts
 npx playwright test --headed // seeing with browser
 npx playwright test // without browser
 
+npx playwright test tests/ui/accounts/accounts.hybrid.create.spec.ts
+npx playwright test tests/ui/contacts/contacts.hybrid.create.spec.ts
+npx playwright test tests/ui/opportunities/opportunities.hybrid.create.spec.ts
+npx playwright test tests/ui/tasks/tasks.hybrid.create.spec.ts
 
 # API
 npx playwright test tests/api  // run all test inside folder "api" 
@@ -249,10 +253,17 @@ npx playwright test tests/api/opportunity/opportunities.get.api.spec.ts
 npx playwright test tests/api/opportunity/opportunities.update.api.spec.ts
 npx playwright test tests/api/opportunity/opportunities.delete.api.spec.ts
 
+npx playwright test tests/ui/customer-onboarding/customer-onboarding.hybrid.create.spec.ts
+
 # Terminal
 tree /F /A | findstr /V /I "node_modules .git test-results" > estrutura.txt // show the structure of my project
 
 ---
+
+## Run
+npm install
+
+npm run report  // Create this artifact reports\latest\execution-report.json
 
 ## Running Tests in Headed Mode (Debugging UI Execution)
 

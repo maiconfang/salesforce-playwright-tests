@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\dev\\workspace\\salesforce-playwright-tests\\playwright.config.ts",
-    "rootDir": "C:/dev/workspace/salesforce-playwright-tests/tests",
+    "configFile": "C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\playwright.config.ts",
+    "rootDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/tests",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -11,20 +11,20 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 8
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/dev/workspace/salesforce-playwright-tests/test-results",
+        "outputDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 8
+          "actualWorkers": 1
         },
         "id": "setup",
         "name": "setup",
-        "testDir": "C:/dev/workspace/salesforce-playwright-tests/tests",
+        "testDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/tests",
         "testIgnore": [],
         "testMatch": [
           "/.*\\.setup\\.ts/"
@@ -32,15 +32,15 @@
         "timeout": 60000
       },
       {
-        "outputDir": "C:/dev/workspace/salesforce-playwright-tests/test-results",
+        "outputDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 8
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/dev/workspace/salesforce-playwright-tests/tests",
+        "testDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/tests",
         "testIgnore": [],
         "testMatch": [
           "tests/ui/**/*.spec.ts",
@@ -49,15 +49,15 @@
         "timeout": 60000
       },
       {
-        "outputDir": "C:/dev/workspace/salesforce-playwright-tests/test-results",
+        "outputDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 8
+          "actualWorkers": 1
         },
         "id": "api",
         "name": "api",
-        "testDir": "C:/dev/workspace/salesforce-playwright-tests/tests",
+        "testDir": "C:/Users/maicon.fang/Documents/workspace/Automation_Test_V001/Venda_Forcada/salesforce-playwright-tests/tests",
         "testIgnore": [
           "tests/api/**/*.hybrid.spec.ts"
         ],
@@ -89,7 +89,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.59.1",
-    "workers": 8,
+    "workers": 6,
     "webServer": null
   },
   "suites": [
@@ -115,31 +115,31 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7050,
+                  "duration": 8073,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "[20:19:40] [FLOW] Performing user login\n"
+                      "text": "[12:39:33] [FLOW] Performing user login\n"
                     },
                     {
-                      "text": "[20:19:40] [DATA] Username = maiconfangsalesforce@gmail.com\n"
+                      "text": "[12:39:33] [DATA] Username = maiconfangsalesforce@gmail.com\n"
                     },
                     {
-                      "text": "[20:19:40] [DATA] Password = ********\n"
+                      "text": "[12:39:33] [DATA] Password = ********\n"
                     },
                     {
-                      "text": "[20:19:40] [ACTION] Clicking Login button\n"
+                      "text": "[12:39:33] [ACTION] Clicking Login button\n"
                     },
                     {
-                      "text": "[20:19:41] [SUCCESS] Successfully clicked Login button\n"
+                      "text": "[12:39:34] [SUCCESS] Successfully clicked Login button\n"
                     },
                     {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\auth.setup.ts-authenticate-setup\\execution-flow.json\n"
+                      "text": "[FLOW] Execution flow saved to: C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\test-results\\auth.setup.ts-authenticate-setup\\execution-flow.json\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.153Z",
+                  "startTime": "2026-06-04T15:39:29.345Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -155,172 +155,6 @@
       ]
     },
     {
-      "title": "api\\leads\\leads.hybrid.spec.ts",
-      "file": "api/leads/leads.hybrid.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Leads Hybrid",
-          "file": "api/leads/leads.hybrid.spec.ts",
-          "line": 6,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should create a Salesforce lead using hybrid workflow",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2619,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "\n========== API REQUEST ==========\n"
-                        },
-                        {
-                          "text": "Method: POST\n"
-                        },
-                        {
-                          "text": "Endpoint: /sobjects/Lead/\n"
-                        },
-                        {
-                          "text": "Payload: {\n  \"FirstName\": \"Maicon 2026-06-03 20-19\",\n  \"LastName\": \"Fang\",\n  \"Company\": \"OpenAI\"\n}\n"
-                        },
-                        {
-                          "text": "[20:19:43] [FLOW] Executing POST request to /sobjects/Lead/\n"
-                        },
-                        {
-                          "text": "[20:19:43] [DATA] Sending payload to /sobjects/Lead/\n"
-                        },
-                        {
-                          "text": "[20:19:43] [SUCCESS] POST /sobjects/Lead/ completed with status 201\n"
-                        },
-                        {
-                          "text": "\n========== API RESPONSE ==========\n"
-                        },
-                        {
-                          "text": "Status: \u001b[33m201\u001b[39m\n"
-                        },
-                        {
-                          "text": "Duration: 408ms\n"
-                        },
-                        {
-                          "text": "ID: 00Qau00000Bq189EAB\n"
-                        },
-                        {
-                          "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                        },
-                        {
-                          "text": "Hybrid Workflow - Created Lead: {\n  \"id\": \"00Qau00000Bq189EAB\",\n  \"success\": true,\n  \"errors\": []\n}\n"
-                        },
-                        {
-                          "text": "[20:19:45] [FLOW] Opening Leads page\n"
-                        },
-                        {
-                          "text": "[20:19:45] [ACTION] Clicking Leads navigation link\n"
-                        },
-                        {
-                          "text": "[20:19:45] [SUCCESS] Successfully clicked Leads navigation link\n"
-                        },
-                        {
-                          "text": "Created Lead: {\n  \"leadId\": \"00Qau00000Bq189EAB\",\n  \"success\": true,\n  \"firstName\": \"Maicon 2026-06-03 20-19\",\n  \"lastName\": \"Fang\",\n  \"company\": \"OpenAI\"\n}\n"
-                        },
-                        {
-                          "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-leads-leads.hybrid-Lea-525e2--lead-using-hybrid-workflow-chromium\\execution-flow.json\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-03T23:19:43.188Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "4a42c80d9b181731ab31-88d0d85e4ecefbd11f61",
-              "file": "api/leads/leads.hybrid.spec.ts",
-              "line": 8,
-              "column": 9
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "ui\\contacts\\contacts.create.spec.ts",
-      "file": "ui/contacts/contacts.create.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create a new contact",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [
-                {
-                  "type": "skip",
-                  "location": {
-                    "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\ui\\contacts\\contacts.create.spec.ts",
-                    "line": 3,
-                    "column": 6
-                  }
-                }
-              ],
-              "expectedStatus": "skipped",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": -1,
-                  "parallelIndex": -1,
-                  "status": "skipped",
-                  "duration": 0,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:42.595Z",
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\ui\\contacts\\contacts.create.spec.ts",
-                        "line": 3,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            }
-          ],
-          "id": "329cc3170f02db606062-81ce5867c410b9852d06",
-          "file": "ui/contacts/contacts.create.spec.ts",
-          "line": 3,
-          "column": 6
-        }
-      ]
-    },
-    {
       "title": "ui\\leads\\leads.create.spec.ts",
       "file": "ui/leads/leads.create.spec.ts",
       "column": 0,
@@ -330,7 +164,7 @@
         {
           "title": "Leads Create",
           "file": "ui/leads/leads.create.spec.ts",
-          "line": 30,
+          "line": 16,
           "column": 6,
           "specs": [
             {
@@ -346,148 +180,148 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 19560,
+                      "duration": 25274,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "[20:19:44] [FLOW] Opening Leads page\n"
+                          "text": "[12:39:43] [FLOW] Opening Leads page\n"
                         },
                         {
-                          "text": "[20:19:45] [ACTION] Clicking Leads navigation link\n"
+                          "text": "[12:39:43] [ACTION] Clicking Leads navigation link\n"
                         },
                         {
-                          "text": "[20:19:45] [SUCCESS] Successfully clicked Leads navigation link\n"
+                          "text": "[12:39:43] [SUCCESS] Successfully clicked Leads navigation link\n"
                         },
                         {
-                          "text": "[20:19:45] [FLOW] Creating new Lead\n"
+                          "text": "[12:39:43] [FLOW] Creating new Lead\n"
                         },
                         {
-                          "text": "[20:19:45] [FLOW] Opening New Lead form\n"
+                          "text": "[12:39:43] [FLOW] Opening New Lead form\n"
                         },
                         {
-                          "text": "[20:19:45] [ACTION] Clicking New lead button\n"
+                          "text": "[12:39:43] [ACTION] Clicking New lead button\n"
                         },
                         {
-                          "text": "[20:19:47] [SUCCESS] Successfully clicked New lead button\n"
+                          "text": "[12:39:46] [SUCCESS] Successfully clicked New lead button\n"
                         },
                         {
-                          "text": "[20:19:49] [FLOW] Filling Lead form\n"
+                          "text": "[12:39:49] [FLOW] Filling Lead form\n"
                         },
                         {
-                          "text": "[20:19:49] [ACTION] Clicking Salutation combobox\n"
+                          "text": "[12:39:49] [ACTION] Clicking Salutation combobox\n"
                         },
                         {
-                          "text": "[20:19:49] [SUCCESS] Successfully clicked Salutation combobox\n"
+                          "text": "[12:39:50] [SUCCESS] Successfully clicked Salutation combobox\n"
                         },
                         {
-                          "text": "[20:19:49] [DATA] Salutation = Mr.\n"
+                          "text": "[12:39:50] [DATA] Salutation = Mr.\n"
                         },
                         {
-                          "text": "[20:19:50] [DATA] First Name input = User\n"
+                          "text": "[12:39:51] [DATA] First Name input = User\n"
                         },
                         {
-                          "text": "[20:19:50] [DATA] Last Name input = Name\n"
+                          "text": "[12:39:51] [DATA] Last Name input = Name\n"
                         },
                         {
-                          "text": "[20:19:51] [DATA] Title input = QA\n"
+                          "text": "[12:39:52] [DATA] Title input = QA\n"
                         },
                         {
-                          "text": "[20:19:51] [DATA] Company input = IT QA\n"
+                          "text": "[12:39:52] [DATA] Company input = IT QA\n"
                         },
                         {
-                          "text": "[20:19:52] [DATA] Email input = user.name@gmail.com\n"
+                          "text": "[12:39:52] [DATA] Email input = user.name@gmail.com\n"
                         },
                         {
-                          "text": "[20:19:52] [DATA] Phone input = 2324255\n"
+                          "text": "[12:39:53] [DATA] Phone input = 2324255\n"
                         },
                         {
-                          "text": "[20:19:52] [ACTION] Clicking Address Search combobox\n"
+                          "text": "[12:39:53] [ACTION] Clicking Address Search combobox\n"
                         },
                         {
-                          "text": "[20:19:53] [SUCCESS] Successfully clicked Address Search combobox\n"
+                          "text": "[12:39:53] [SUCCESS] Successfully clicked Address Search combobox\n"
                         },
                         {
-                          "text": "[20:19:53] [ACTION] Clicking Address option: Moncton NB, Canada\n"
+                          "text": "[12:39:54] [ACTION] Clicking Address option: Moncton NB, Canada\n"
                         },
                         {
-                          "text": "[20:19:54] [SUCCESS] Successfully clicked Address option: Moncton NB, Canada\n"
+                          "text": "[12:39:55] [SUCCESS] Successfully clicked Address option: Moncton NB, Canada\n"
                         },
                         {
-                          "text": "[20:19:54] [ACTION] Clicking Street input\n"
+                          "text": "[12:39:55] [ACTION] Clicking Street input\n"
                         },
                         {
-                          "text": "[20:19:55] [SUCCESS] Successfully clicked Street input\n"
+                          "text": "[12:39:56] [SUCCESS] Successfully clicked Street input\n"
                         },
                         {
-                          "text": "[20:19:55] [DATA] Street input = 999 Main\n"
+                          "text": "[12:39:56] [DATA] Street input = 999 Main\n"
                         },
                         {
-                          "text": "[20:19:56] [DATA] Postal Code input = AWP 875\n"
+                          "text": "[12:39:57] [DATA] Postal Code input = AWP 875\n"
                         },
                         {
-                          "text": "[20:19:56] [ACTION] Clicking Rating combobox\n"
+                          "text": "[12:39:57] [ACTION] Clicking Rating combobox\n"
                         },
                         {
-                          "text": "[20:19:56] [SUCCESS] Successfully clicked Rating combobox\n"
+                          "text": "[12:39:57] [SUCCESS] Successfully clicked Rating combobox\n"
                         },
                         {
-                          "text": "[20:19:56] [DATA] Rating = Hot\n"
+                          "text": "[12:39:58] [DATA] Rating = Hot\n"
                         },
                         {
-                          "text": "[20:19:56] [ACTION] Clicking No. of Employees number input\n"
+                          "text": "[12:39:58] [ACTION] Clicking No. of Employees number input\n"
                         },
                         {
-                          "text": "[20:19:57] [SUCCESS] Successfully clicked No. of Employees number input\n"
+                          "text": "[12:39:58] [SUCCESS] Successfully clicked No. of Employees number input\n"
                         },
                         {
-                          "text": "[20:19:58] [DATA] No. of Employees = 5\n"
+                          "text": "[12:39:59] [DATA] No. of Employees = 5\n"
                         },
                         {
-                          "text": "[20:19:58] [ACTION] Clicking Lead Source combobox\n"
+                          "text": "[12:39:59] [ACTION] Clicking Lead Source combobox\n"
                         },
                         {
-                          "text": "[20:19:58] [SUCCESS] Successfully clicked Lead Source combobox\n"
+                          "text": "[12:39:59] [SUCCESS] Successfully clicked Lead Source combobox\n"
                         },
                         {
-                          "text": "[20:19:58] [DATA] Lead Source = Web\n"
+                          "text": "[12:39:59] [DATA] Lead Source = Web\n"
                         },
                         {
-                          "text": "[20:19:58] [ACTION] Clicking Annual Revenue number input\n"
+                          "text": "[12:39:59] [ACTION] Clicking Annual Revenue number input\n"
                         },
                         {
-                          "text": "[20:19:59] [SUCCESS] Successfully clicked Annual Revenue number input\n"
+                          "text": "[12:40:00] [SUCCESS] Successfully clicked Annual Revenue number input\n"
                         },
                         {
-                          "text": "[20:19:59] [DATA] Annual Revenue = 8000\n"
+                          "text": "[12:40:00] [DATA] Annual Revenue = 8000\n"
                         },
                         {
-                          "text": "[20:19:59] [ACTION] Clicking Industry combobox\n"
+                          "text": "[12:40:00] [ACTION] Clicking Industry combobox\n"
                         },
                         {
-                          "text": "[20:20:00] [SUCCESS] Successfully clicked Industry combobox\n"
+                          "text": "[12:40:01] [SUCCESS] Successfully clicked Industry combobox\n"
                         },
                         {
-                          "text": "[20:20:00] [DATA] Industry = Other\n"
+                          "text": "[12:40:01] [DATA] Industry = Other\n"
                         },
                         {
-                          "text": "[20:20:00] [DATA] Description input = Description hi\n"
+                          "text": "[12:40:01] [DATA] Description input = Description hi\n"
                         },
                         {
-                          "text": "[20:20:00] [ACTION] Clicking Save button\n"
+                          "text": "[12:40:01] [ACTION] Clicking Save button\n"
                         },
                         {
-                          "text": "[20:20:01] [SUCCESS] Successfully clicked Save button\n"
+                          "text": "[12:40:02] [SUCCESS] Successfully clicked Save button\n"
                         },
                         {
-                          "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\ui-leads-leads.create-Leads-Create-should-create-a-new-lead-chromium\\execution-flow.json\n"
+                          "text": "[FLOW] Execution flow saved to: C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\test-results\\ui-leads-leads.create-Leads-Create-should-create-a-new-lead-chromium\\execution-flow.json\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-03T23:19:43.234Z",
+                      "startTime": "2026-06-04T15:39:38.817Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -497,7 +331,7 @@
               ],
               "id": "3fe96f9d79aa120554b5-09dde2290309a6d0a9bc",
               "file": "ui/leads/leads.create.spec.ts",
-              "line": 32,
+              "line": 18,
               "column": 7
             },
             {
@@ -511,8 +345,8 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
-                        "line": 76,
+                        "file": "C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
+                        "line": 62,
                         "column": 8
                       }
                     }
@@ -522,21 +356,21 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-03T23:20:02.928Z",
+                      "startTime": "2026-06-04T15:40:04.273Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
-                            "line": 76,
+                            "file": "C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
+                            "line": 62,
                             "column": 8
                           }
                         }
@@ -549,7 +383,7 @@
               ],
               "id": "3fe96f9d79aa120554b5-a54cae9437fe9e5d1f7b",
               "file": "ui/leads/leads.create.spec.ts",
-              "line": 76,
+              "line": 62,
               "column": 8
             },
             {
@@ -563,8 +397,8 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
-                        "line": 97,
+                        "file": "C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
+                        "line": 82,
                         "column": 8
                       }
                     }
@@ -574,21 +408,21 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 2,
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-03T23:20:02.929Z",
+                      "startTime": "2026-06-04T15:40:04.274Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
-                            "line": 97,
+                            "file": "C:\\Users\\maicon.fang\\Documents\\workspace\\Automation_Test_V001\\Venda_Forcada\\salesforce-playwright-tests\\tests\\ui\\leads\\leads.create.spec.ts",
+                            "line": 82,
                             "column": 8
                           }
                         }
@@ -601,2488 +435,20 @@
               ],
               "id": "3fe96f9d79aa120554b5-48d6c0e116afcf786849",
               "file": "ui/leads/leads.create.spec.ts",
-              "line": 97,
+              "line": 82,
               "column": 8
             }
           ]
-        }
-      ]
-    },
-    {
-      "title": "api\\account\\accounts.create.api.spec.ts",
-      "file": "api/account/accounts.create.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create an account via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 753,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Account 2026-06-03-20-19\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Account/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 698ms\n"
-                    },
-                    {
-                      "text": "ID: 001au00000L12EzAAJ\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "Created Account: {\n  \"id\": \"001au00000L12EzAAJ\",\n  \"success\": true,\n  \"errors\": []\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-account-accounts.creat-058e4--account-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.282Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "e1c5a3b90262407cc0ae-c4c98a626c0ba53bd34c",
-          "file": "api/account/accounts.create.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\account\\accounts.delete.api.spec.ts",
-      "file": "api/account/accounts.delete.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should delete an account",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 1618,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Test Account\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Account/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 1087ms\n"
-                    },
-                    {
-                      "text": "ID: 001au00000L0mzvAAB\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: DELETE\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/001au00000L0mzvAAB\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing DELETE request to /sobjects/Account/001au00000L0mzvAAB\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] DELETE /sobjects/Account/001au00000L0mzvAAB completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 470ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-account-accounts.delete.api-should-delete-an-account-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.148Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "91b2f423096b5ac67b32-5caaed4d27022dd8262c",
-          "file": "api/account/accounts.delete.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\account\\accounts.get.api.spec.ts",
-      "file": "api/account/accounts.get.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should get an account by id",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 1214,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Test Account\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Account/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 896ms\n"
-                    },
-                    {
-                      "text": "ID: 001au00000L11FjAAJ\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/001au00000L11FjAAJ\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing GET request to /sobjects/Account/001au00000L11FjAAJ\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] GET /sobjects/Account/001au00000L11FjAAJ completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 251ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-account-accounts.get.api-should-get-an-account-by-id-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.079Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "b32945fb2ea5d525e9ef-618d06ae5d8f82de20db",
-          "file": "api/account/accounts.get.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\account\\accounts.update.api.spec.ts",
-      "file": "api/account/accounts.update.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should update an account",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 4,
-                  "parallelIndex": 4,
-                  "status": "passed",
-                  "duration": 1607,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Test Account\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Account/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Account/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 1065ms\n"
-                    },
-                    {
-                      "text": "ID: 001au00000L10bPAAR\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: PATCH\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/001au00000L10bPAAR\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Updated Account\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing PATCH request to /sobjects/Account/001au00000L10bPAAR\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] PATCH /sobjects/Account/001au00000L10bPAAR completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 172ms\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Account/001au00000L10bPAAR\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing GET request to /sobjects/Account/001au00000L10bPAAR\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] GET /sobjects/Account/001au00000L10bPAAR completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 297ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-account-accounts.update.api-should-update-an-account-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.164Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "f14a09388fbb614ef97c-cc2680ab35ccd80a8e26",
-          "file": "api/account/accounts.update.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\auth\\auth.api.spec.ts",
-      "file": "api/auth/auth.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should authenticate with Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [
-                {
-                  "type": "skip",
-                  "location": {
-                    "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\auth\\auth.api.spec.ts",
-                    "line": 6,
-                    "column": 6
-                  }
-                }
-              ],
-              "expectedStatus": "skipped",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": -1,
-                  "parallelIndex": -1,
-                  "status": "skipped",
-                  "duration": 0,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:31.309Z",
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\auth\\auth.api.spec.ts",
-                        "line": 6,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            }
-          ],
-          "id": "31b449e11e23a564774e-ed2767fcd8654f74db4e",
-          "file": "api/auth/auth.api.spec.ts",
-          "line": 6,
-          "column": 6
-        }
-      ]
-    },
-    {
-      "title": "api\\contact\\contacts.create.api.spec.ts",
-      "file": "api/contact/contacts.create.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create a contact via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 5,
-                  "parallelIndex": 6,
-                  "status": "passed",
-                  "duration": 814,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Contact/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 758ms\n"
-                    },
-                    {
-                      "text": "ID: 003au00000EmN8jAAF\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-contact-contacts.creat-f016d--contact-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.222Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "91595094f608e6562ca7-f9043b9fb6f820086e21",
-          "file": "api/contact/contacts.create.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\contact\\contacts.delete.api.spec.ts",
-      "file": "api/contact/contacts.delete.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should delete a contact",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 6,
-                  "parallelIndex": 7,
-                  "status": "passed",
-                  "duration": 1176,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Contact/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 771ms\n"
-                    },
-                    {
-                      "text": "ID: 003au00000EmAxuAAF\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: DELETE\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/003au00000EmAxuAAF\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing DELETE request to /sobjects/Contact/003au00000EmAxuAAF\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] DELETE /sobjects/Contact/003au00000EmAxuAAF completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 342ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-contact-contacts.delete.api-should-delete-a-contact-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.198Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "e7042a3077306d7537c8-d74901dbab0b1ee4918d",
-          "file": "api/contact/contacts.delete.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\contact\\contacts.get.api.spec.ts",
-      "file": "api/contact/contacts.get.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should get a contact by id",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 7,
-                  "parallelIndex": 5,
-                  "status": "passed",
-                  "duration": 988,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:32] [FLOW] Executing POST request to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:32] [DATA] Sending payload to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Contact/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 676ms\n"
-                    },
-                    {
-                      "text": "ID: 003au00000EmG0pAAF\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/003au00000EmG0pAAF\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing GET request to /sobjects/Contact/003au00000EmG0pAAF\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] GET /sobjects/Contact/003au00000EmG0pAAF completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 250ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-contact-contacts.get.api-should-get-a-contact-by-id-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:32.308Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "36369116d68cc9ec288b-faa8f6297338cc321610",
-          "file": "api/contact/contacts.get.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\contact\\contacts.update.api.spec.ts",
-      "file": "api/contact/contacts.update.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should update a contact",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 796,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Contact/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Contact/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 354ms\n"
-                    },
-                    {
-                      "text": "ID: 003au00000EmNALAA3\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: PATCH\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/003au00000EmNALAA3\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Title\": \"Senior QA Automation Engineer\",\n  \"Department\": \"Engineering\",\n  \"Email\": \"maicon.updated@example.com\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing PATCH request to /sobjects/Contact/003au00000EmNALAA3\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] PATCH /sobjects/Contact/003au00000EmNALAA3 completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 326ms\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Contact/003au00000EmNALAA3\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing GET request to /sobjects/Contact/003au00000EmNALAA3\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] GET /sobjects/Contact/003au00000EmNALAA3 completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 91ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-contact-contacts.update.api-should-update-a-contact-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.055Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "caea13c7da88790f5bbd-f839414311e9fd0e4665",
-          "file": "api/contact/contacts.update.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\discovery\\discovery.api.spec.ts",
-      "file": "api/discovery/discovery.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should discover Salesforce API endpoints",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [
-                {
-                  "type": "skip",
-                  "location": {
-                    "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\discovery\\discovery.api.spec.ts",
-                    "line": 7,
-                    "column": 6
-                  }
-                }
-              ],
-              "expectedStatus": "skipped",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": -1,
-                  "parallelIndex": -1,
-                  "status": "skipped",
-                  "duration": 0,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.057Z",
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\discovery\\discovery.api.spec.ts",
-                        "line": 7,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            }
-          ],
-          "id": "f8c525507ff57d536269-d09265787958bfd68e65",
-          "file": "api/discovery/discovery.api.spec.ts",
-          "line": 7,
-          "column": 6
-        },
-        {
-          "title": "should discover Salesforce sObjects",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [
-                {
-                  "type": "skip",
-                  "location": {
-                    "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\discovery\\discovery.api.spec.ts",
-                    "line": 50,
-                    "column": 6
-                  }
-                }
-              ],
-              "expectedStatus": "skipped",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": -1,
-                  "parallelIndex": -1,
-                  "status": "skipped",
-                  "duration": 0,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.057Z",
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\discovery\\discovery.api.spec.ts",
-                        "line": 50,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            }
-          ],
-          "id": "f8c525507ff57d536269-d6658dc69790ee1d44b3",
-          "file": "api/discovery/discovery.api.spec.ts",
-          "line": 50,
-          "column": 6
-        },
-        {
-          "title": "should describe Lead object",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [
-                {
-                  "type": "skip",
-                  "location": {
-                    "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\discovery\\discovery.api.spec.ts",
-                    "line": 95,
-                    "column": 6
-                  }
-                }
-              ],
-              "expectedStatus": "skipped",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": -1,
-                  "parallelIndex": -1,
-                  "status": "skipped",
-                  "duration": 0,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.058Z",
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "location": {
-                        "file": "C:\\dev\\workspace\\salesforce-playwright-tests\\tests\\api\\discovery\\discovery.api.spec.ts",
-                        "line": 95,
-                        "column": 6
-                      }
-                    }
-                  ],
-                  "attachments": []
-                }
-              ],
-              "status": "skipped"
-            }
-          ],
-          "id": "f8c525507ff57d536269-0edb1637958a72e8c40e",
-          "file": "api/discovery/discovery.api.spec.ts",
-          "line": 95,
-          "column": 6
-        }
-      ]
-    },
-    {
-      "title": "api\\leads\\leads.create.api.spec.ts",
-      "file": "api/leads/leads.create.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create a lead via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 5,
-                  "parallelIndex": 6,
-                  "status": "passed",
-                  "duration": 376,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"Company\": \"OpenAI\",\n  \"FirstName\": \"Maicon 2026-06-03-20-19\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Lead/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 358ms\n"
-                    },
-                    {
-                      "text": "ID: 00Qau00000Bq13JEAR\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "Created Lead: {\n  \"id\": \"00Qau00000Bq13JEAR\",\n  \"success\": true,\n  \"errors\": []\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-leads-leads.create.api-87387-e-a-lead-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.062Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "8da19f5eacbdb8d14ea6-1c6037625cb084b9e47e",
-          "file": "api/leads/leads.create.api.spec.ts",
-          "line": 17,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\leads\\leads.delete.api.spec.ts",
-      "file": "api/leads/leads.delete.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should delete a lead",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 759,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"Company\": \"OpenAI\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Lead/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 416ms\n"
-                    },
-                    {
-                      "text": "ID: 00Qau00000Bq14vEAB\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: DELETE\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/00Qau00000Bq14vEAB\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing DELETE request to /sobjects/Lead/00Qau00000Bq14vEAB\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] DELETE /sobjects/Lead/00Qau00000Bq14vEAB completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 319ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-leads-leads.delete.api-should-delete-a-lead-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.316Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "2e32df861c468d782ed0-6d0b729609b7da1072f2",
-          "file": "api/leads/leads.delete.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\leads\\leads.get.api.spec.ts",
-      "file": "api/leads/leads.get.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should get a lead by id",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 7,
-                  "parallelIndex": 5,
-                  "status": "passed",
-                  "duration": 760,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"Company\": \"OpenAI\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Lead/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 552ms\n"
-                    },
-                    {
-                      "text": "ID: 00Qau00000Bq13KEAR\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/00Qau00000Bq13KEAR\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing GET request to /sobjects/Lead/00Qau00000Bq13KEAR\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] GET /sobjects/Lead/00Qau00000Bq13KEAR completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 184ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-leads-leads.get.api-should-get-a-lead-by-id-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.316Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "b8d1ead167f6676d8e58-b17b907e3ffc961077e1",
-          "file": "api/leads/leads.get.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\leads\\leads.hybrid.api-only.spec.ts",
-      "file": "api/leads/leads.hybrid.api-only.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create lead using API only workflow",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 6,
-                  "parallelIndex": 7,
-                  "status": "passed",
-                  "duration": 480,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"FirstName\": \"API ONLY\",\n  \"LastName\": \"Fang\",\n  \"Company\": \"OpenAI\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Lead/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 475ms\n"
-                    },
-                    {
-                      "text": "ID: 00Qau00000Bq0yUEAR\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "API ONLY RESPONSE: { id: \u001b[32m'00Qau00000Bq0yUEAR'\u001b[39m, success: \u001b[33mtrue\u001b[39m, errors: [] }\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-leads-leads.hybrid.api-26b12-ead-using-API-only-workflow-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.400Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "3a10db783a838df24316-a18c5a4c78db9edc126d",
-          "file": "api/leads/leads.hybrid.api-only.spec.ts",
-          "line": 35,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\leads\\leads.update.api.spec.ts",
-      "file": "api/leads/leads.update.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should update a lead",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 5,
-                  "parallelIndex": 6,
-                  "status": "passed",
-                  "duration": 771,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"LastName\": \"Fang\",\n  \"Company\": \"OpenAI\",\n  \"FirstName\": \"Maicon\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Lead/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [SUCCESS] POST /sobjects/Lead/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 452ms\n"
-                    },
-                    {
-                      "text": "ID: 00Qau00000Bq16XEAR\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: PATCH\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/00Qau00000Bq16XEAR\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Company\": \"OpenAI Updated\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing PATCH request to /sobjects/Lead/00Qau00000Bq16XEAR\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] PATCH /sobjects/Lead/00Qau00000Bq16XEAR completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 192ms\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Lead/00Qau00000Bq16XEAR\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing GET request to /sobjects/Lead/00Qau00000Bq16XEAR\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] GET /sobjects/Lead/00Qau00000Bq16XEAR completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 97ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-leads-leads.update.api-should-update-a-lead-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.451Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "2d35ac8564cf49621896-b0844032ad0180151396",
-          "file": "api/leads/leads.update.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\opportunity\\opportunities.create.api.spec.ts",
-      "file": "api/opportunity/opportunities.create.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create opportunity via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 328,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Enterprise Contract 2026-06-03T23-19-33-794Z\",\n  \"StageName\": \"Prospecting\",\n  \"CloseDate\": \"2026-12-31\",\n  \"Description\": \"Opportunity created through Playwright API automation.\",\n  \"Amount\": 250000,\n  \"NextStep\": \"Present proposal to customer and schedule follow-up meeting\",\n  \"Type\": \"New Customer\",\n  \"LeadSource\": \"Web\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Opportunity/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 311ms\n"
-                    },
-                    {
-                      "text": "ID: 006au000009sMWEAA2\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "Created Opportunity: {\n  \"id\": \"006au000009sMWEAA2\",\n  \"success\": true,\n  \"errors\": []\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-opportunity-opportunit-417f0-ortunity-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.787Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "13ace8523f341d717771-c3f4318ed0cf3d632436",
-          "file": "api/opportunity/opportunities.create.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\opportunity\\opportunities.delete.api.spec.ts",
-      "file": "api/opportunity/opportunities.delete.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should delete opportunity via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 4,
-                  "parallelIndex": 4,
-                  "status": "passed",
-                  "duration": 631,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"Opportunity Delete Test 2026-06-03T23-19-33-805Z\",\n  \"StageName\": \"Prospecting\",\n  \"CloseDate\": \"2026-12-31\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Opportunity/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 432ms\n"
-                    },
-                    {
-                      "text": "ID: 006au000009sP13AAE\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: DELETE\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/006au000009sP13AAE\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing DELETE request to /sobjects/Opportunity/006au000009sP13AAE\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] DELETE /sobjects/Opportunity/006au000009sP13AAE completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 176ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-opportunity-opportunit-42810-ortunity-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.793Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "71c2e1aa12a7416b089e-26719656a7009c389cd1",
-          "file": "api/opportunity/opportunities.delete.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\opportunity\\opportunities.get.api.spec.ts",
-      "file": "api/opportunity/opportunities.get.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should retrieve opportunity by id via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 430,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Enterprise Contract 2026-06-03T23-19-33-871Z\",\n  \"StageName\": \"Prospecting\",\n  \"CloseDate\": \"2026-12-31\",\n  \"Description\": \"Opportunity created for GET validation.\",\n  \"Amount\": 250000,\n  \"NextStep\": \"Present proposal to customer\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Opportunity/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 327ms\n"
-                    },
-                    {
-                      "text": "ID: 006au000009sOxpAAE\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/006au000009sOxpAAE\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing GET request to /sobjects/Opportunity/006au000009sOxpAAE\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] GET /sobjects/Opportunity/006au000009sOxpAAE completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 84ms\n"
-                    },
-                    {
-                      "text": "Retrieved Opportunity: {\n  \"attributes\": {\n    \"type\": \"Opportunity\",\n    \"url\": \"/services/data/v61.0/sobjects/Opportunity/006au000009sOxpAAE\"\n  },\n  \"Id\": \"006au000009sOxpAAE\",\n  \"IsDeleted\": false,\n  \"AccountId\": null,\n  \"Name\": \"OpenAI Enterprise Contract 2026-06-03T23-19-33-871Z\",\n  \"Description\": \"Opportunity created for GET validation.\",\n  \"StageName\": \"Prospecting\",\n  \"Amount\": 250000,\n  \"Probability\": 10,\n  \"CloseDate\": \"2026-12-31\",\n  \"Type\": null,\n  \"NextStep\": \"Present proposal to customer\",\n  \"LeadSource\": null,\n  \"IsClosed\": false,\n  \"IsWon\": false,\n  \"ForecastCategory\": \"Pipeline\",\n  \"ForecastCategoryName\": \"Pipeline\",\n  \"CampaignId\": null,\n  \"HasOpportunityLineItem\": false,\n  \"Pricebook2Id\": null,\n  \"OwnerId\": \"005au00000480rlAAA\",\n  \"CreatedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"CreatedById\": \"005au00000480rlAAA\",\n  \"LastModifiedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastModifiedById\": \"005au00000480rlAAA\",\n  \"SystemModstamp\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastActivityDate\": null,\n  \"PushCount\": 0,\n  \"LastStageChangeDate\": null,\n  \"FiscalQuarter\": 4,\n  \"FiscalYear\": 2026,\n  \"Fiscal\": \"2026 4\",\n  \"ContactId\": null,\n  \"LastViewedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastReferencedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"HasOpenActivity\": false,\n  \"HasOverdueTask\": false,\n  \"LastAmountChangedHistoryId\": null,\n  \"LastCloseDateChangedHistoryId\": null\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-opportunity-opportunit-88512-ty-by-id-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.864Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "f1d518de5a16cedebbc8-b373b0816583e8e0366c",
-          "file": "api/opportunity/opportunities.get.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\opportunity\\opportunities.update.api.spec.ts",
-      "file": "api/opportunity/opportunities.update.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should update opportunity via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 6,
-                  "parallelIndex": 7,
-                  "status": "passed",
-                  "duration": 611,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"OpenAI Enterprise Contract 2026-06-03T23-19-33-899Z\",\n  \"StageName\": \"Prospecting\",\n  \"CloseDate\": \"2026-12-31\",\n  \"Description\": \"Original opportunity description.\",\n  \"Amount\": 250000\n}\n"
-                    },
-                    {
-                      "text": "[20:19:33] [FLOW] Executing POST request to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:33] [DATA] Sending payload to /sobjects/Opportunity/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Opportunity/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 308ms\n"
-                    },
-                    {
-                      "text": "ID: 006au000009sOzRAAU\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: PATCH\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/006au000009sOzRAAU\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Name\": \"Updated Opportunity 2026-06-03T23-19-33-899Z\",\n  \"StageName\": \"Qualification\",\n  \"CloseDate\": \"2027-01-31\",\n  \"Description\": \"Opportunity updated through Playwright API automation.\",\n  \"Amount\": 350000,\n  \"NextStep\": \"Schedule executive review meeting\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing PATCH request to /sobjects/Opportunity/006au000009sOzRAAU\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] PATCH /sobjects/Opportunity/006au000009sOzRAAU completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 194ms\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Opportunity/006au000009sOzRAAU\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing GET request to /sobjects/Opportunity/006au000009sOzRAAU\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] GET /sobjects/Opportunity/006au000009sOzRAAU completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 78ms\n"
-                    },
-                    {
-                      "text": "Updated Opportunity: {\n  \"attributes\": {\n    \"type\": \"Opportunity\",\n    \"url\": \"/services/data/v61.0/sobjects/Opportunity/006au000009sOzRAAU\"\n  },\n  \"Id\": \"006au000009sOzRAAU\",\n  \"IsDeleted\": false,\n  \"AccountId\": null,\n  \"Name\": \"Updated Opportunity 2026-06-03T23-19-33-899Z\",\n  \"Description\": \"Opportunity updated through Playwright API automation.\",\n  \"StageName\": \"Qualification\",\n  \"Amount\": 350000,\n  \"Probability\": 10,\n  \"CloseDate\": \"2027-01-31\",\n  \"Type\": null,\n  \"NextStep\": \"Schedule executive review meeting\",\n  \"LeadSource\": null,\n  \"IsClosed\": false,\n  \"IsWon\": false,\n  \"ForecastCategory\": \"Pipeline\",\n  \"ForecastCategoryName\": \"Pipeline\",\n  \"CampaignId\": null,\n  \"HasOpportunityLineItem\": false,\n  \"Pricebook2Id\": null,\n  \"OwnerId\": \"005au00000480rlAAA\",\n  \"CreatedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"CreatedById\": \"005au00000480rlAAA\",\n  \"LastModifiedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastModifiedById\": \"005au00000480rlAAA\",\n  \"SystemModstamp\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastActivityDate\": null,\n  \"PushCount\": 1,\n  \"LastStageChangeDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"FiscalQuarter\": 1,\n  \"FiscalYear\": 2027,\n  \"Fiscal\": \"2027 1\",\n  \"ContactId\": null,\n  \"LastViewedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastReferencedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"HasOpenActivity\": false,\n  \"HasOverdueTask\": false,\n  \"LastAmountChangedHistoryId\": \"008au00000CBRNmAAP\",\n  \"LastCloseDateChangedHistoryId\": \"008au00000CBRNmAAP\"\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-opportunity-opportunit-51e8d-ortunity-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:33.893Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "81bfc88e0206da272642-4d66b54e2ec7ed965b4f",
-          "file": "api/opportunity/opportunities.update.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\task\\tasks.create.api.spec.ts",
-      "file": "api/task/tasks.create.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should create task via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 331,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Subject\": \"Salesforce API Task 2026-06-03T23-19-34-098Z\",\n  \"Status\": \"In Progress\",\n  \"Priority\": \"High\",\n  \"Description\": \"Task created through Playwright API automation.\",\n  \"ActivityDate\": \"2026-06-05\",\n  \"IsReminderSet\": true,\n  \"ReminderDateTime\": \"2026-06-04T14:00:00.000Z\",\n  \"CallType\": \"Outbound\",\n  \"CallDisposition\": \"Completed\",\n  \"CallDurationInSeconds\": 300\n}\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing POST request to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [DATA] Sending payload to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Task/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 311ms\n"
-                    },
-                    {
-                      "text": "ID: 00Tau000008SrsnEAC\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "Created Task: {\n  \"id\": \"00Tau000008SrsnEAC\",\n  \"success\": true,\n  \"errors\": []\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-task-tasks.create.api--6cefc-ate-task-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:34.092Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "bda037b450d8be5653ec-a8e7c26e16e4108145e6",
-          "file": "api/task/tasks.create.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\task\\tasks.delete.api.spec.ts",
-      "file": "api/task/tasks.delete.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should delete task via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 7,
-                  "parallelIndex": 5,
-                  "status": "passed",
-                  "duration": 894,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Subject\": \"Task Delete Test 2026-06-03T23-19-34-099Z\",\n  \"Status\": \"Not Started\",\n  \"Priority\": \"Normal\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing POST request to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [DATA] Sending payload to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Task/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 308ms\n"
-                    },
-                    {
-                      "text": "ID: 00Tau000008SrrBEAS\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: DELETE\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/00Tau000008SrrBEAS\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing DELETE request to /sobjects/Task/00Tau000008SrrBEAS\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] DELETE /sobjects/Task/00Tau000008SrrBEAS completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 567ms\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-task-tasks.delete.api--8b929-ete-task-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:34.093Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "61e2c8ce2f3a95de343e-fbce420ff4f67cf04a1f",
-          "file": "api/task/tasks.delete.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\task\\tasks.get.api.spec.ts",
-      "file": "api/task/tasks.get.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should retrieve task by id via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 384,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Subject\": \"Task Get Test 2026-06-03T23-19-34-136Z\",\n  \"Status\": \"In Progress\",\n  \"Priority\": \"High\",\n  \"Description\": \"Task created for GET validation.\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing POST request to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [DATA] Sending payload to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Task/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 273ms\n"
-                    },
-                    {
-                      "text": "ID: 00Tau000008SnfWEAS\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/00Tau000008SnfWEAS\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing GET request to /sobjects/Task/00Tau000008SnfWEAS\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] GET /sobjects/Task/00Tau000008SnfWEAS completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 92ms\n"
-                    },
-                    {
-                      "text": "Retrieved Task: {\n  \"attributes\": {\n    \"type\": \"Task\",\n    \"url\": \"/services/data/v61.0/sobjects/Task/00Tau000008SnfWEAS\"\n  },\n  \"Id\": \"00Tau000008SnfWEAS\",\n  \"WhoId\": null,\n  \"WhatId\": null,\n  \"Subject\": \"Task Get Test 2026-06-03T23-19-34-136Z\",\n  \"ActivityDate\": null,\n  \"Status\": \"In Progress\",\n  \"Priority\": \"High\",\n  \"IsHighPriority\": true,\n  \"OwnerId\": \"005au00000480rlAAA\",\n  \"Description\": \"Task created for GET validation.\",\n  \"IsDeleted\": false,\n  \"AccountId\": null,\n  \"IsClosed\": false,\n  \"CreatedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"CreatedById\": \"005au00000480rlAAA\",\n  \"LastModifiedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastModifiedById\": \"005au00000480rlAAA\",\n  \"SystemModstamp\": \"2026-06-03T23:19:36.000+0000\",\n  \"IsArchived\": false,\n  \"CallDurationInSeconds\": null,\n  \"CallType\": null,\n  \"CallDisposition\": null,\n  \"CallObject\": null,\n  \"ReminderDateTime\": null,\n  \"IsReminderSet\": false,\n  \"RecurrenceActivityId\": null,\n  \"IsRecurrence\": false,\n  \"RecurrenceStartDateOnly\": null,\n  \"RecurrenceEndDateOnly\": null,\n  \"RecurrenceTimeZoneSidKey\": null,\n  \"RecurrenceType\": null,\n  \"RecurrenceInterval\": null,\n  \"RecurrenceDayOfWeekMask\": null,\n  \"RecurrenceDayOfMonth\": null,\n  \"RecurrenceInstance\": null,\n  \"RecurrenceMonthOfYear\": null,\n  \"RecurrenceRegeneratedType\": null,\n  \"TaskSubtype\": \"Task\",\n  \"CompletedDateTime\": null\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-task-tasks.get.api-sho-f1c16-sk-by-id-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:34.130Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "f012ea66288a6c850fbe-93bbda374f70be28e77d",
-          "file": "api/task/tasks.get.api.spec.ts",
-          "line": 22,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "title": "api\\task\\tasks.update.api.spec.ts",
-      "file": "api/task/tasks.update.api.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "should update task via Salesforce API",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "api",
-              "projectName": "api",
-              "results": [
-                {
-                  "workerIndex": 5,
-                  "parallelIndex": 6,
-                  "status": "passed",
-                  "duration": 877,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: POST\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Subject\": \"Task Update Test 2026-06-03T23-19-34-242Z\",\n  \"Status\": \"Not Started\",\n  \"Priority\": \"Normal\",\n  \"Description\": \"Original task description.\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing POST request to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [DATA] Sending payload to /sobjects/Task/\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] POST /sobjects/Task/ completed with status 201\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m201\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 288ms\n"
-                    },
-                    {
-                      "text": "ID: 00Tau000008SruPEAS\n"
-                    },
-                    {
-                      "text": "Success: \u001b[33mtrue\u001b[39m\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: PATCH\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/00Tau000008SruPEAS\n"
-                    },
-                    {
-                      "text": "Payload: {\n  \"Subject\": \"Updated Task 2026-06-03T23-19-34-242Z\",\n  \"Status\": \"Completed\",\n  \"Priority\": \"High\",\n  \"Description\": \"Task updated through Playwright API automation.\"\n}\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing PATCH request to /sobjects/Task/00Tau000008SruPEAS\n"
-                    },
-                    {
-                      "text": "[20:19:34] [SUCCESS] PATCH /sobjects/Task/00Tau000008SruPEAS completed with status 204\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m204\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 447ms\n"
-                    },
-                    {
-                      "text": "\n========== API REQUEST ==========\n"
-                    },
-                    {
-                      "text": "Method: GET\n"
-                    },
-                    {
-                      "text": "Endpoint: /sobjects/Task/00Tau000008SruPEAS\n"
-                    },
-                    {
-                      "text": "[20:19:34] [FLOW] Executing GET request to /sobjects/Task/00Tau000008SruPEAS\n"
-                    },
-                    {
-                      "text": "[20:19:35] [SUCCESS] GET /sobjects/Task/00Tau000008SruPEAS completed with status 200\n"
-                    },
-                    {
-                      "text": "\n========== API RESPONSE ==========\n"
-                    },
-                    {
-                      "text": "Status: \u001b[33m200\u001b[39m\n"
-                    },
-                    {
-                      "text": "Duration: 115ms\n"
-                    },
-                    {
-                      "text": "Updated Task: {\n  \"attributes\": {\n    \"type\": \"Task\",\n    \"url\": \"/services/data/v61.0/sobjects/Task/00Tau000008SruPEAS\"\n  },\n  \"Id\": \"00Tau000008SruPEAS\",\n  \"WhoId\": null,\n  \"WhatId\": null,\n  \"Subject\": \"Updated Task 2026-06-03T23-19-34-242Z\",\n  \"ActivityDate\": null,\n  \"Status\": \"Completed\",\n  \"Priority\": \"High\",\n  \"IsHighPriority\": true,\n  \"OwnerId\": \"005au00000480rlAAA\",\n  \"Description\": \"Task updated through Playwright API automation.\",\n  \"IsDeleted\": false,\n  \"AccountId\": null,\n  \"IsClosed\": true,\n  \"CreatedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"CreatedById\": \"005au00000480rlAAA\",\n  \"LastModifiedDate\": \"2026-06-03T23:19:36.000+0000\",\n  \"LastModifiedById\": \"005au00000480rlAAA\",\n  \"SystemModstamp\": \"2026-06-03T23:19:36.000+0000\",\n  \"IsArchived\": false,\n  \"CallDurationInSeconds\": null,\n  \"CallType\": null,\n  \"CallDisposition\": null,\n  \"CallObject\": null,\n  \"ReminderDateTime\": null,\n  \"IsReminderSet\": false,\n  \"RecurrenceActivityId\": null,\n  \"IsRecurrence\": false,\n  \"RecurrenceStartDateOnly\": null,\n  \"RecurrenceEndDateOnly\": null,\n  \"RecurrenceTimeZoneSidKey\": null,\n  \"RecurrenceType\": null,\n  \"RecurrenceInterval\": null,\n  \"RecurrenceDayOfWeekMask\": null,\n  \"RecurrenceDayOfMonth\": null,\n  \"RecurrenceInstance\": null,\n  \"RecurrenceMonthOfYear\": null,\n  \"RecurrenceRegeneratedType\": null,\n  \"TaskSubtype\": \"Task\",\n  \"CompletedDateTime\": \"2026-06-03T23:19:36.000+0000\"\n}\n"
-                    },
-                    {
-                      "text": "[FLOW] Execution flow saved to: C:\\dev\\workspace\\salesforce-playwright-tests\\test-results\\api-task-tasks.update.api--1a995-ate-task-via-Salesforce-API-api\\execution-flow.json\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-06-03T23:19:34.235Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "0a0e92d968cd6173dff1-91ba48c8c0c5b67330c6",
-          "file": "api/task/tasks.update.api.spec.ts",
-          "line": 22,
-          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-03T23:19:31.175Z",
-    "duration": 31945.092,
-    "expected": 24,
-    "skipped": 7,
+    "startTime": "2026-06-04T15:39:27.999Z",
+    "duration": 36427.672,
+    "expected": 2,
+    "skipped": 2,
     "unexpected": 0,
     "flaky": 0
   }
