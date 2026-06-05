@@ -17,7 +17,7 @@ import {
   WorkflowResult,
 } from "@models/common/WorkflowResult";
 
-import { createContactData } from "@data/contacts";
+import { createContactData } from "@test-data/contacts";
 
 export class CreateContactHybridWorkflow {
 

@@ -12,7 +12,7 @@ import { SalesforceAuthClient }
 
 import { AccountsPage }
   from "@pages/AccountsPage";
-import { createAccountData } from "@data/accounts";
+import { createAccountData } from "@test-data/accounts";
 import { WorkflowResult } from "@models/common/WorkflowResult";
 
 

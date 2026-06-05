@@ -4,8 +4,6 @@ import {
 
 import { BasePage } from "./BasePage";
 
-import { GlobalSearchComponent } from "@components/search/GlobalSearchComponent";
-
 import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
 import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
 
@@ -13,15 +11,17 @@ import { Logger } from "@framework-utils/logger/Logger";
 
 export class ContactsPage extends BasePage {
 
-  private readonly globalSearchComponent:
-    GlobalSearchComponent;
+  private readonly contactListSearch =
+    this.page.getByRole(
+      "searchbox",
+      {
+        name: "Search this list...",
+      },
+    );
 
   constructor(page: Page) {
 
     super(page);
-
-    this.globalSearchComponent =
-      new GlobalSearchComponent(page);
   }
 
   async openContacts(): Promise<void> {
@@ -69,8 +69,16 @@ export class ContactsPage extends BasePage {
       `Searching Contact: ${contactName}`,
     );
 
-    await this.globalSearchComponent.search(
+    await this.uiActionsComponent.fill(
+      this.contactListSearch,
       contactName,
+      "Contact list search",
+    );
+
+    await this.uiActionsComponent.press(
+      this.contactListSearch,
+      "Enter",
+      "Contact list search",
     );
 
     Logger.debug(

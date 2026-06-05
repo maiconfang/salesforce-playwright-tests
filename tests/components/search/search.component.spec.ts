@@ -1,7 +1,6 @@
 import { test } from '@playwright/test';
 
 import { LeadsPage } from '@pages/LeadsPage';
-import { leadTestData } from '@data/leads';
 
 test.describe('Search Component', () => {
     test.skip('should search lead using reusable search component', async ({ page }) => {

@@ -17,7 +17,7 @@ import { OpportunitiesPage }
 import {
   WorkflowResult,
 } from "@models/common/WorkflowResult";
-import { createOpportunityData } from "@data/opportunities";
+import { createOpportunityData } from "@test-data/opportunities";
 
 export class CreateOpportunityHybridWorkflow {
 

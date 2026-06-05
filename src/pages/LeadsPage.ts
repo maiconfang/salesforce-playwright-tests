@@ -12,44 +12,12 @@ import { LeadFormComponent } from "@components/forms/LeadFormComponent";
 import { CrudActionsComponent } from "@components/crud/CrudActionsComponent";
 import { ToastComponent } from "@components/toast/ToastComponent";
 import { ModalComponent } from "@components/modal/ModalComponent";
-import { GlobalSearchComponent } from "@components/search/GlobalSearchComponent";
 
 import { ExecutionContextManager } from "@/core/execution/ExecutionContextManager";
 import { ExecutionFlowType } from "@/core/execution/ExecutionFlowType";
 
 import { Logger } from "@framework-utils/logger/Logger";
 
-/**
- * LeadsPage
- *
- * Responsibility:
- * - Orchestrate Lead business flows
- * - Coordinate reusable Lead components
- * - Handle Lead page interactions
- *
- * Architecture:
- * - LeadsPage orchestrates the Lead flow
- * - Form logic delegated to LeadFormComponent
- * - Search logic delegated to GlobalSearchComponent
- *
- * Composition examples:
- * - LeadsPage HAS-A LeadFormComponent
- * - LeadsPage HAS-A GlobalSearchComponent
- *
- * Benefits:
- * - Cleaner Page Object
- * - Better scalability
- * - Reusable components
- * - Easier maintenance
- * - Enterprise-style design
- *
- * Execution Observability:
- * - Generates semantic execution flow events
- * - Provides human-readable execution telemetry
- * - Helps explain test execution behavior
- * - Supports future AI-powered analysis
- * - Integrates with the execution observability system
- */
 export class LeadsPage extends BasePage {
 
   private readonly leadFormComponent:
@@ -64,10 +32,10 @@ export class LeadsPage extends BasePage {
   private readonly modalComponent:
     ModalComponent;
 
-  private readonly globalSearchComponent:
-    GlobalSearchComponent;
-
   private readonly newLeadHeading:
+    Locator;
+
+  private readonly leadListSearch:
     Locator;
 
   constructor(page: Page) {
@@ -86,14 +54,19 @@ export class LeadsPage extends BasePage {
     this.modalComponent =
       new ModalComponent(page);
 
-    this.globalSearchComponent =
-      new GlobalSearchComponent(page);
-
     this.newLeadHeading =
       this.page.getByRole(
         "heading",
         {
           name: "New Lead",
+        },
+      );
+
+    this.leadListSearch =
+      this.page.getByRole(
+        "searchbox",
+        {
+          name: "Search this list...",
         },
       );
   }
@@ -130,6 +103,48 @@ export class LeadsPage extends BasePage {
 
     Logger.debug(
       "Leads page opened successfully",
+    );
+  }
+
+  /**
+   * Searches for a Lead.
+   */
+  async searchLead(
+    searchText: string,
+  ): Promise<void> {
+
+    const executionContext =
+      ExecutionContextManager.getContext();
+
+    executionContext.addStep(
+      ExecutionFlowType.FLOW,
+      `Searching Lead: ${searchText}`,
+    );
+
+    executionContext.addData(
+      "Lead Name",
+      searchText,
+      "Lead Search",
+    );
+
+    Logger.debug(
+      `Searching Lead: ${searchText}`,
+    );
+
+    await this.uiActionsComponent.fill(
+      this.leadListSearch,
+      searchText,
+      "Lead list search",
+    );
+
+    await this.uiActionsComponent.press(
+      this.leadListSearch,
+      "Enter",
+      "Lead list search",
+    );
+
+    Logger.debug(
+      `Lead search executed successfully: ${searchText}`,
     );
   }
 
@@ -292,7 +307,7 @@ export class LeadsPage extends BasePage {
   }
 
   /**
-   * Validates no results state in global search.
+   * Validates no results state.
    */
   async expectGlobalSearchNoResults(
     searchText: string,
@@ -321,35 +336,7 @@ export class LeadsPage extends BasePage {
     ).toBeVisible();
 
     Logger.debug(
-      "Global search no results validated successfully",
-    );
-  }
-
-  /**
-   * Searches for a Lead.
-   */
-  async searchLead(
-    searchText: string,
-  ): Promise<void> {
-
-    const executionContext =
-      ExecutionContextManager.getContext();
-
-    executionContext.addStep(
-      ExecutionFlowType.FLOW,
-      `Searching Lead: ${searchText}`,
-    );
-
-    Logger.debug(
-      `Searching Lead: ${searchText}`,
-    );
-
-    await this.globalSearchComponent.search(
-      searchText,
-    );
-
-    Logger.debug(
-      `Lead search executed successfully: ${searchText}`,
+      "No results validated successfully",
     );
   }
 
